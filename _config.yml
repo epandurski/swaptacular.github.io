@@ -10,16 +10,11 @@ plugins:
 permalink: pretty
 
 # Setup
-title: Hyde
-tagline: 'A Jekyll theme'
+title: Swaptacular
+tagline: 'The future of money'
 description: >
-  A brazen two-column Jekyll theme that pairs a prominent sidebar with
-  uncomplicated content.
-url: http://hyde.getpoole.com
-
-author:
-  name: 'Mark Otto'
-  url: https://twitter.com/mdo
+  Free software for managing syndicated digital currencies
+url: http://swaptacular.org
 
 paginate: 2
 
@@ -27,4 +22,4 @@ paginate: 2
 version: 2.1.0
 
 github:
-  repo: https://github.com/poole/hyde
+  repo: https://github.com/epandurski/swaptacular
