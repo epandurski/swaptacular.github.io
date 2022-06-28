@@ -141,6 +141,13 @@ a.sidebar-nav-item:focus {
   }
 }
 
+/*
+ * Copyleft symbol
+ */
+.copyleft {
+  display:inline-block;
+  transform: rotate(180deg);
+}
 
 /*
  * Reverse layout

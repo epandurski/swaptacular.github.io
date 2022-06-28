@@ -13,13 +13,21 @@ permalink: pretty
 title: Swaptacular
 tagline: 'The future of money'
 description: >
-  Free software for managing syndicated digital currencies
+  Free software which makes creation of digital currencies possible
+  for everyone. No strings attached!
 url: http://swaptacular.org
 
 paginate: 2
 
 # Custom vars
 version: 2.1.0
+
+app_demo:
+  debtors_webapp: https://demo.swaptacular.org/debtors-webapp
+  creditors_webapp: https://demo.swaptacular.org/creditors-webapp
+
+mailing_list:
+  url: https://groups.io/g/swaptacular
 
 github:
   repo: https://github.com/epandurski/swaptacular
