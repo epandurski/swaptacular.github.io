@@ -61,12 +61,12 @@ Interoperability protocols
 
 At the core of Swaptacular's network architecture is the [Swaptacular
 Messaging
-Protocol](https://github.com/epandurski/swaptacular/blob/master/docs/protocol.rst),
+Protocol](https://epandurski.github.io/swaptacular/protocol.pdf),
 which governs the communication between accounting authorities and
 debtors/creditors agents. The protocol uses a [two-phase
 commit](https://en.wikipedia.org/wiki/Two-phase_commit_protocol)
-schema, which allows for the implementation of currency exchanges in
-the spirit of [Circular Multilateral
+schema for making payments, which allows for the implementation of
+currency exchanges in the spirit of [Circular Multilateral
 Barter](https://epandurski.github.io/swaptacular/cmb/cmb-general.pdf).
 
 In order to allow currency holders to use a client application of
