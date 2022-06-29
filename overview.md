@@ -15,7 +15,7 @@ Swaptacular project consists of three things:
 
 
 The network architecture
--------------------------------
+------------------------
 
 In Swaptacular's network architecture, there are five types of nodes:
 
