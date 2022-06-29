@@ -53,7 +53,7 @@ real-world network:
 The above diagram shows two different *creditors agents*, each
 connecting *currency holders* to two different *accounting
 authorities*. It also shows two different *debtors agents*, each
-connecting *currency issuers* the same accounting authority.
+connecting *currency issuers* to the same accounting authority.
 
 
 Interoperability protocols
@@ -61,7 +61,7 @@ Interoperability protocols
 
 At the core of Swaptacular's network architecture is the [Swaptacular
 Messaging
-Protocol](https://github.com/epandurski/swpt_accounts/blob/master/protocol.rst),
+Protocol](https://github.com/epandurski/swaptacular/blob/master/docs/protocol.rst),
 which governs the communication between accounting authorities and
 debtors/creditors agents. The protocol uses a [two-phase
 commit](https://en.wikipedia.org/wiki/Two-phase_commit_protocol)
