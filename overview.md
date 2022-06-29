@@ -47,7 +47,7 @@ connections that can exist between different types of nodes in a
 real-world network:
 
 <div class="message">
-  <img src="/public/diagrams/swpt_comlex_nework.svg" alt="Swaptacular Real-world Network">
+  <img src="/public/diagrams/swpt_complex_nework.svg" alt="Swaptacular Real-world Network">
 </div>
 
 The above diagram shows two different *creditors agents*, each
