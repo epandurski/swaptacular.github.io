@@ -38,13 +38,12 @@ The diagram above shows the simplest possible Swaptacular
 network. Note that different network nodes (*accounting authorities,
 creditors agents, debtors agents*) can be operated by different
 organizations or individuals. Thus, very much like Internet,
-Swaptacular's network is decentralized by its nature.
+**Swaptacular's network is decentralized by its nature**.
 
 Another important thing to note is that one *creditors agent* can
 connect *currency holders* to many different *accounting
-authorities*. The following diagram attempts to illustrate the
-connections that can exist between different types of nodes in a
-real-world network:
+authorities*. The following diagram illustrates the connections that
+can exist between different types of nodes in a real-world network:
 
 <div class="message">
   <img src="/public/diagrams/swpt_complex_nework.svg" alt="Swaptacular Real-world Network">
@@ -66,8 +65,9 @@ which governs the communication between accounting authorities and
 debtors/creditors agents. The protocol uses a [two-phase
 commit](https://en.wikipedia.org/wiki/Two-phase_commit_protocol)
 schema for making payments, which allows for the implementation of
-currency exchanges in the spirit of [Circular Multilateral
-Barter](https://epandurski.github.io/swaptacular/cmb/cmb-general.pdf).
+automatic currency exchanges in the spirit of [Circular Multilateral
+Barter](https://epandurski.github.io/swaptacular/cmb/cmb-general.pdf),
+eliminating the need for a single reserve currency.
 
 In order to allow currency holders to use a client application of
 their choice, Swaptacular recommends the following OpenAPI
