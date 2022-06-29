@@ -5,6 +5,8 @@ highlighter: rouge
 plugins:
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
 
 # Permalinks
 permalink: pretty
@@ -18,6 +20,10 @@ description: >
 url: http://swaptacular.org
 
 paginate: 2
+
+feed:
+  excerpt_only: true
+  posts_limit: 20
 
 # Custom vars
 version: 2.1.0
