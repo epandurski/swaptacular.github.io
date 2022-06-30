@@ -352,6 +352,19 @@ tbody tr:nth-child(odd) th {
   color: #9a9a9a;
 }
 
+/* Author line below the data line */
+.post-author {
+  display: block;
+  margin-top: -1.25rem;
+  margin-bottom: 1rem;
+  color: #9a9a9a;
+}
+
+/* The "read more" line bellow the post excerpt */
+.post-read-more {
+  display: block;
+}
+
 /* Related posts */
 .related {
   padding-top: 2rem;

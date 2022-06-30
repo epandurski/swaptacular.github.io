@@ -3,11 +3,7 @@ layout: post
 title: Introducing Swaptacular
 description: An introduction to the Swaptacular open source project.
 author: Evgeni Pandurski
-excerpt: >
-  Nowadays, it is relatively easy to become a holder of a digital
-  currency, but it is not at all easy to become an issuer of a digital
-  currency. Swaptacular tries to make creating and issuing new
-  digital currencies possible for everyone.
+excerpt_separator: '<!--more-->'
 ---
 
 Digital currencies are all around us. Nowadays, it is relatively easy
@@ -20,6 +16,7 @@ Swaptacular project consists of three things:
 2. A set of interoperability protocols
 3. Reference implementations for the interoperability protocols
 
+<!--more-->
 
 The network architecture
 ------------------------

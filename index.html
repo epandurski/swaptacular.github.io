@@ -11,10 +11,15 @@ title: Blog
         {{ post.title }}
       </a>
     </h1>
-
     <span class="post-date">{{ post.date | date_to_string }}</span>
+    {% if post.author %}
+      <span class="post-author">{{ post.author }}</span>
+    {% endif %}
 
-    {{ post.content }}
+    {{ post.excerpt }}
+    <span class="post-read-more">
+      <a href="{{ post.url }}">Read more &raquo;</a>
+    </span>
   </div>
   {% endfor %}
 </div>

@@ -19,7 +19,7 @@ description: >
   for everyone. No strings attached!
 url: http://swaptacular.org
 
-paginate: 5
+paginate: 10
 
 feed:
   excerpt_only: true
