@@ -70,9 +70,8 @@ Barter](https://epandurski.github.io/swaptacular/cmb/cmb-general.pdf),
 eliminating the need for a single reserve currency.
 
 In order to allow currency holders to use a client application of
-their choice, Swaptacular recommends the following OpenAPI
-specification for the [Payments Web
-API](https://epandurski.github.io/swaptacular/swpt_creditors/redoc.html).
+their choice, Swaptacular recommends creditors agents to follow the 
+[Payments Web API Specification](https://epandurski.github.io/swaptacular/swpt_creditors/redoc.html).
 
 Since interchangeability of client applications for currency issuing
 is not of critical importance, Swaptacular does not make
