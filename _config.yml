@@ -23,7 +23,7 @@ paginate: 5
 
 feed:
   excerpt_only: true
-  posts_limit: 20
+  posts_limit: 10
 
 # Custom vars
 version: 2.1.0
