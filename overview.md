@@ -14,8 +14,7 @@ Swaptacular project consists of three things:
 3. Reference implementations for the interoperability protocols
 
 
-The network architecture
-------------------------
+## The network architecture
 
 In Swaptacular's network architecture, there are five types of nodes:
 
@@ -55,8 +54,7 @@ authorities*. It also shows two different *debtors agents*, each
 connecting *currency issuers* to the same accounting authority.
 
 
-Interoperability protocols
---------------------------
+## Interoperability protocols
 
 At the core of Swaptacular's network architecture is the [Swaptacular
 Messaging
@@ -81,8 +79,7 @@ implementation uses a [Simple Issuing Web
 API](https://epandurski.github.io/swaptacular/swpt_debtors/redoc.html).
 
 
-Reference implementations
--------------------------
+## Reference implementations
 
 * [Accounting Authority](https://github.com/epandurski/swpt_accounts)
 * [Debtors Agent](https://github.com/epandurski/swpt_debtors)
@@ -100,8 +97,7 @@ All the above implementations try to:
    horizontally, is indeed possible.
 
 
-Remaining work
---------------
+## Remaining work
 
 - [x] Implement a user friendly UI for currency issuing.
 - [x] Implement a user friendly UI for making and receiving payments.
@@ -111,3 +107,22 @@ Remaining work
   accounting authorities, using user friendly UI and/or configuration
   files.
 - [ ] Implement circular currency exchanges.
+
+
+<div>
+  <h2>Want to know more?</h2>
+  <ul class="related-posts">
+  {% for node in site.categories.intro %}
+    {% unless node.categories contains 'overview' %}
+      <li>
+        <h3>
+          <a href="{{ node.url }}">
+            {{ node.title }}
+          </a>
+          <small>{{ node.date | date_to_string }}</small>
+        </h3>
+      </li>
+    {% endunless %}
+  {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,26 @@
+{% assign related_nodes = [] %}
+{% for category in page.categories %}
+  {% assign related_nodes = related_nodes | concat: site.categories[category] %}
+{% endfor %}
+{% if related_nodes.size < 2 %}
+  {% assign related_nodes = site.related_posts | slice: 0, 3 %}
+{% endif %}
+{% if related_nodes.size != 0 %}
+  <div class="related">
+    <h2>Related Posts</h2>
+    <ul class="related-posts">
+    {% for node in related_nodes %}
+      {% if node.url != page.url %}
+        <li>
+          <h3>
+            <a href="{{ node.url }}">
+              {{ node.title }}
+            </a>
+            <small>{{ node.date | date_to_string }}</small>
+          </h3>
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </div>
+{% endif %}
