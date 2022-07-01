@@ -3,7 +3,7 @@ layout: post
 title: Introducing Swaptacular
 description: An introduction to the Swaptacular open source project.
 author: Evgeni Pandurski
-categories: [overview, intro]
+tags: [overview, intro]
 ---
 
 Digital currencies are all around us. Nowadays, it is relatively easy

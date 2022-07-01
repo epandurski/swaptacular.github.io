@@ -1,6 +1,6 @@
 {% assign related_nodes = [] %}
-{% for category in page.categories %}
-  {% assign related_nodes = related_nodes | concat: site.categories[category] %}
+{% for tag in page.tags %}
+  {% assign related_nodes = related_nodes | concat: site.tags[tag] %}
 {% endfor %}
 {% if related_nodes.size < 2 %}
   {% assign related_nodes = site.related_posts | slice: 0, 3 %}

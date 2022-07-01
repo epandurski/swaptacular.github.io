@@ -111,8 +111,8 @@ All the above implementations try to:
 <div>
   <h2>Want to know more?</h2>
   <ul class="related-posts">
-  {% for node in site.categories.intro %}
-    {% unless node.categories contains 'overview' %}
+  {% for node in site.tags.intro %}
+    {% unless node.tags contains 'overview' %}
       <li>
         <h3>
           <a href="{{ node.url }}">
