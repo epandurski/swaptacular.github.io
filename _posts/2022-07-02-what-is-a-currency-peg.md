@@ -100,9 +100,10 @@ Now, getting back to the original question:
 </div>
 
 I honestly do not know! But what I know is that lots of big, and not
-so big players do it already, and the "game" is much less regulated
-than commonly perceived. Occasionally, this leads to a mess. But most
-of the time, it seems to work quite well.
+so big players, have been doing this for hundreds for years, and the
+"game" is much less regulated than commonly perceived. Occasionally,
+this leads to a mess. But most of the time, it seems to work quite
+well.
 
 ## Does Swaptacular allow currency pegs?
 
