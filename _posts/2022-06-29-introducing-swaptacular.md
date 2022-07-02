@@ -34,7 +34,7 @@ In Swaptacular's network architecture, there are five types of nodes:
    accounting authorities.
 
 <div class="message">
-  <img src="/public/diagrams/swpt_basic_network.svg" alt="Swaptacular Basic Network">
+  <img src="/images/swpt_basic_network.svg" alt="Swaptacular Basic Network">
 </div>
 
 The diagram above shows the simplest possible Swaptacular
@@ -49,7 +49,7 @@ authorities*. The following diagram illustrates the connections that
 can exist between different types of nodes in a real-world network:
 
 <div class="message">
-  <img src="/public/diagrams/swpt_complex_nework.svg" alt="Swaptacular Real-world Network">
+  <img src="/images/swpt_complex_nework.svg" alt="Swaptacular Real-world Network">
 </div>
 
 The above diagram shows two different *creditors agents*, each
