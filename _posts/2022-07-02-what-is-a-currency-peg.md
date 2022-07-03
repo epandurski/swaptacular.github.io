@@ -16,7 +16,7 @@ published: false
 
 ## Well, yes, and no!
 
-Here is where currency pegging comes in:
+This is where currency pegging comes in:
 
 <!--more-->
 
@@ -27,20 +27,21 @@ Here is where currency pegging comes in:
 > stability to a currency by attaching its value, in a predetermined
 > ratio, to a different and more stable currency.
 
-Often, governments of smaller countries peg their currencies to the
-currency of a bigger country. But this "pegging business" does not
+Quite often, governments of smaller countries peg their currencies to
+the currency of a bigger country. But this "pegging business" does not
 stop here!
 
 When a new commercial bank starts to operate, in reality, a brand new
-digital currency is being created. When the bank approves a loan,
-fresh new tokens of the bank's digital currency are being issued in
-circulation. With tens of thousands of commercial banks operating, how
-come this does not turn into a complete mess?
+digital currency is being created (that is: customers' accounts at the
+bank). When the bank approves a loan, fresh new tokens of the bank's
+digital currency are being issued in circulation. With tens of
+thousands of commercial banks operating, how come this does not turn
+into a complete mess?
 
 You probably know the answer to this question already: Every
 commercial bank pegs its digital currency to the currency issued by
-the central bank of the country. The currency issued by the central
-bank is called *bank reserves*.
+the central bank of the country. The digital currency issued by the
+central bank is called *bank reserves*.
 
 > Bank reserves are the cash minimums that financial institutions must
 > have on hand in order to meet central bank requirements. This is
@@ -100,34 +101,34 @@ Now, getting back to the original question:
   terrible idea?
 </div>
 
-I honestly do not know! But what I know is that lots of big, and not
-so big players, have been doing this for hundreds for years, and the
-"game" is much less regulated than commonly perceived. Occasionally,
-this turns into to a mess. But most of the time, it seems to work
-quite well.
+Well, I do not know! I guess history will be the judge. But what I
+know is that lots of big, and not so big players, have been doing this
+for hundreds for years, and the "game" is much less regulated than
+commonly perceived. Occasionally, this turns into to a mess. But most
+of the time, it seems to work quite well.
 
 ## Currency Pegging in Swaptacular
 
 Currency pegging is a first-class citizen in Swaptacular. When you
 configure your currency, you can declare a fixed exchange rate with
 any other Swaptacular currency. Non-Swaptacular currencies (USD, EUR,
-gold etc.) can also be used as pegs, as long as global currency IDs
-have been reserved for them.
+gold etc.) can also be used as pegs, as long as corresponding global
+currency IDs have been reserved for them.
 
 In practice, this means that almost all of the currencies created in
 Swaptacular will be denominated in well known currency units (USD,
-EUR, gold), and most likely will not even have their own name, apart
-from the name of the issuer. Precisely for this reason, in Swaptacular
-currency issuers are called *debtors*, and currency holders are called
+EUR, gold), and will not even have their own name, apart from the name
+of the issuer. Precisely for this reason, in Swaptacular currency
+issuers are called *debtors*, and currency holders are called
 *creditors*.
 
 ## Currency Exchanges in Swaptacular
 
 Remember the example I gave earlier, when somebody wanted to transfer
 money from an account in one commercial bank, to an account in another
-commercial bank? Then because every comercail bank, in reality, issues
-its own digital currency, the amount first had to be exchanged to
-*bank reserves* (the currency issued by the central bank)?
+commercial bank? Then because every commercial bank, in reality,
+issues its own digital currency, the amount first had to be exchanged
+to *bank reserves* (the digital currency issued by the central bank)?
 
 Well, it is nearly the same in Swaptacular! You can use a currency
 that you have, and swap it with a currency that you need. Remember, as
@@ -136,11 +137,10 @@ pegs](#peg-tree), such an exchange should be possible to perform
 automatically, because the exchange rate is fixed and well known.
 
 In practice, performing automatic exchanges between gazillion of
-currencies is not an easy task. One viable strategy is to have
+currencies is not an easy task. One proven strategy is to have
 specialized *currency exchange hubs*, which operate for
-profit. Another promising strategy is to implement currency exchange
-hubs that perform automatic currency exchanges in the spirit of
-[Circular Multilateral
+profit. Another promising strategy is to implement automatic currency
+exchanges in the spirit of [Circular Multilateral
 Barter](https://epandurski.github.io/swaptacular/cmb/cmb-general.pdf).
 
 <div class="message">
