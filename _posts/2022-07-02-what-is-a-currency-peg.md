@@ -49,8 +49,9 @@ bank is called *bank reserves*.
 > are intended to ensure that every bank can meet any large and
 > unexpected demand for withdrawals.
 
-When somebody transfers money from one commercial bank to another, in
-reality, several "invisible" exchanges happen:
+When somebody transfers money from an account in one commercial bank,
+to an account in another commercial bank, in reality, several
+"invisible" exchanges happen:
 
 1. The sender's bank "sells" some amount of its *bank reserves* to the
    central bank.
@@ -68,7 +69,7 @@ So, on closer inspection, one realizes that what looks like a single
 physical (paper) currency, in reality, is a tree of digital currencies
 held together by currency pegs:
 
-<div class="message">
+<div class="message" id="peg-tree">
   <img src="/images/bank-pegs-tree.svg" alt="A tree of currency pegs">
 </div>
 
@@ -102,9 +103,51 @@ Now, getting back to the original question:
 I honestly do not know! But what I know is that lots of big, and not
 so big players, have been doing this for hundreds for years, and the
 "game" is much less regulated than commonly perceived. Occasionally,
-this leads to a mess. But most of the time, it seems to work quite
-well.
+this turns into to a mess. But most of the time, it seems to work
+quite well.
 
-## Does Swaptacular allow currency pegs?
+## Currency Pegging in Swaptacular
 
-Of course, it does!
+Currency pegging is a first-class citizen in Swaptacular. When you
+configure your currency, you can declare a fixed exchange rate with
+any other Swaptacular currency. Non-Swaptacular currencies (USD, EUR,
+gold etc.) can also be used as pegs, as long as global currency IDs
+have been reserved for them.
+
+In practice, this means that almost all of the currencies created in
+Swaptacular will be denominated in well known currency units (USD,
+EUR, gold), and most likely will not even have their own name, apart
+from the name of the issuer. Precisely for this reason, in Swaptacular
+currency issuers are called *debtors*, and currency holders are called
+*creditors*.
+
+## Currency Exchanges in Swaptacular
+
+Remember the example I gave earlier, when somebody wanted to transfer
+money from an account in one commercial bank, to an account in another
+commercial bank? Then because every comercail bank, in reality, issues
+its own digital currency, the amount first had to be exchanged to
+*bank reserves* (the currency issued by the central bank)?
+
+Well, it is nearly the same in Swaptacular! You can use a currency
+that you have, and swap it with a currency that you need. Remember, as
+long as both currencies are part of the same [tree of currency
+pegs](#peg-tree), such an exchange should be possible to perform
+automatically, because the exchange rate is fixed and well known.
+
+In practice, performing automatic exchanges between gazillion of
+currencies is not an easy task. One viable strategy is to have
+specialized *currency exchange hubs*, which operate for
+profit. Another promising strategy is to implement currency exchange
+hubs that perform automatic currency exchanges in the spirit of
+[Circular Multilateral
+Barter](https://epandurski.github.io/swaptacular/cmb/cmb-general.pdf).
+
+<div class="message">
+  <b>Note:</b> The <a href="{{ site.app_demo.creditors_webapp}}">Currency
+  Holder UI</a> allows you to set an exchange policy for each currency
+  in your wallet, so that the creditors agent could arrange circular
+  exchanges with other users. This functionality is not implemented on
+  the server yet. Currently, all exchange policies set by users will
+  be ignored.
+</div>

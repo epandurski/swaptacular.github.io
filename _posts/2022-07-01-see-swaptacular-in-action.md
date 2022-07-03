@@ -11,9 +11,8 @@ UI](https://github.com/epandurski/swpt_debtors_ui), and the [Currency
 Holder UI](https://github.com/epandurski/swpt_creditors_ui), I am
 happy to show something that works reasonably well (fingers crossed).
 
-There are two apps: [My
-currency](https://demo.swaptacular.org/debtors-webapp/) and [My
-wallet](https://demo.swaptacular.org/creditors-webapp/). The fist app
+There are two apps: [My currency]({{ site.app_demo.debtors_webapp}})
+and [My wallet]({{ site.app_demo.creditors_webapp}}). The fist app
 allows you to create your own currency. The second app allows you to
 use other peoples' currencies, including your own one. These are
 progressive web-apps (PWA), which can be installed and can work
