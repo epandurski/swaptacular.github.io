@@ -6,7 +6,6 @@ description: >
   and how banks, surprisingly, use them as well.
 author: Evgeni Pandurski
 tags: [intro]
-published: false
 ---
 
 <div class="lead">
@@ -58,7 +57,7 @@ to an account in another commercial bank, in reality, several
    central bank.
 
 2. The central bank increases the *bank reserves* held by the
-   recipient's bank, and instructs the bank to "wire" the same amount
+   recipient's bank, and instructs the bank to deposit the same amount
    of recipient's bank digital currency to the recipient's account.
 
 3. If the *bank reserves* held by the sender's bank fall below the
@@ -110,10 +109,10 @@ of the time, it seems to work quite well.
 ## Currency Pegging in Swaptacular
 
 Currency pegging is a first-class citizen in Swaptacular. When you
-configure your currency, you can declare a fixed exchange rate with
-any other Swaptacular currency. Non-Swaptacular currencies (USD, EUR,
-gold etc.) can also be used as pegs, as long as corresponding global
-currency IDs have been reserved for them.
+configure your own currency, you can specify a fixed exchange rate
+with some other Swaptacular currency. Non-Swaptacular currencies (USD,
+EUR, gold etc.) can also be used as pegs, if global currency IDs have
+been reserved for them.
 
 In practice, this means that almost all of the currencies created in
 Swaptacular will be denominated in well known currency units (USD,
@@ -126,14 +125,15 @@ issuers are called *debtors*, and currency holders are called
 
 Remember the example I gave earlier, when somebody wanted to transfer
 money from an account in one commercial bank, to an account in another
-commercial bank? Then because every commercial bank, in reality,
-issues its own digital currency, the amount first had to be exchanged
-to *bank reserves* (the digital currency issued by the central bank)?
+commercial bank? It turned out, because every commercial bank, in
+reality, issues its own digital currency, the amount first had to be
+exchanged to *bank reserves*. (That is, the digital currency issued by
+the central bank.)
 
 Well, it is nearly the same in Swaptacular! You can use a currency
 that you have, and swap it with a currency that you need. Remember, as
 long as both currencies are part of the same [tree of currency
-pegs](#peg-tree), such an exchange should be possible to perform
+pegs](#peg-tree), such an exchange can be performed more or less
 automatically, because the exchange rate is fixed and well known.
 
 In practice, performing automatic exchanges between gazillion of
@@ -142,6 +142,11 @@ specialized *currency exchange hubs*, which operate for
 profit. Another promising strategy is to implement automatic currency
 exchanges in the spirit of [Circular Multilateral
 Barter](https://epandurski.github.io/swaptacular/cmb/cmb-general.pdf).
+
+Allowing automatic currency exchanges in Swaptacular was a key goal
+since the beginning. All the underlying protocols are designed to
+support it, and I hope that in the not so distant future, we will have
+the time and resources to implement it.
 
 <div class="message">
   <b>Note:</b> The <a href="{{ site.app_demo.creditors_webapp}}">Currency
