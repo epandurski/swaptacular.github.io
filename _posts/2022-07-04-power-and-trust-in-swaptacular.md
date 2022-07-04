@@ -55,3 +55,32 @@ actors:
 <div class="message">
   <img src="/images/trust-relations.svg" alt="Trust Relations in Swaptacular">
 </div>
+
+Back to our restaurant example: Paul would be the *currency
+issuer*. Paul's partners, employees, and customers would be the
+*currency holders*.
+
+If Paul really is a powerful and respected man in his neighborhoods,
+chances are that he will be able to find enough buyers for the
+[IOUs](https://en.wikipedia.org/wiki/IOU) that he issues, so that he
+can replace the ventilation system without a bank loan.
+
+Perhaps Paul's customers will be happy to pay for their dinners with
+Paul's digital currency, instead of money. Perhaps Paul's employees
+would not mind to receive some portion of their salaries in Paul's
+digital currency as well. After all, they could easily exchange it for
+the digital currency issued by the nearby hair salon.
+
+The good thing is that Paul did not lose sleep. He chose his
+allies. He assigned the *debtors agent* with the responsibility to
+manage his digital currency. If Paul was technically savvy, and did
+not want to trust anybody with this important task, he could set up
+his own debtors agent and accounting authority severs, over which he
+would have complete control.
+
+Paul's partners, employees, and customers should not be unhappy
+too. They chose to trust Paul, and they assigned the *creditors agent*
+with the responsibility to manage their digital wallets. If they were
+technically savvy, and did not want to trust anybody with this
+important task, they could set up their own creditors agents servers,
+over which they would have complete control.
