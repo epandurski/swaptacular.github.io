@@ -143,8 +143,8 @@ profit. Another promising strategy is to implement automatic currency
 exchanges in the spirit of [Circular Multilateral
 Barter](https://epandurski.github.io/swaptacular/cmb/cmb-general.pdf).
 
-Allowing automatic currency exchanges in Swaptacular was a key goal
-since the beginning. All the underlying protocols are designed to
+Allowing automatic currency exchanges in Swaptacular has been a key
+goal since the beginning. All the underlying protocols are designed to
 support it, and I hope that in the not so distant future, we will have
 the time and resources to implement it.
 
