@@ -19,9 +19,9 @@ published: false
 
 "One man's meat is another man's poison", they say. It may not always
 be obvious, but in every society there are many powers at play. They
-compete with each other, and they ally with each other. The competing
-powers are almost certainly perceived as bad. The allied powers are
-more likely to be perceived as good.
+compete with each other, and they ally with each other. Competing
+powers are almost certainly perceived as bad. Allied powers are more
+likely to be perceived as good.
 
 <!--more-->
 
@@ -31,5 +31,27 @@ chose as allies people who we trust. But from time to time, reality
 asserts itself, and we are forced to trust people who normally we
 would not trust.
 
-Paul is an owner of a restaurant. The business is good, and people
-like Paul's restaurant.
+Imagine this: Paul is an owner of a restaurant. The business is good.
+Many people love Paul's restaurant. Unfortunately, the old, but very
+expensive ventilation system stopped working, and has to be
+replaced. Paul applies for a bank load. They make him sign a bunch of
+documents with lots of fine-print. Paul has no choice but to trust
+them. From now on, Paul and the bank are allies.
+
+Sounds familiar?
+
+You see, Paul is not a nobody. He is *powerful* and very well
+respected man in his neighborhood. Hundreds of people dine at his
+restaurant every day. And yet, a broken ventilation system forces him
+to make dubious friends. Pity!
+
+## Choose who you trust
+
+As I explained in [a previous
+post](/2022/06/29/introducing-swaptacular/), Swaptacular's network is
+decentralized by its nature, and consists of five different types of
+actors:
+
+<div class="message">
+  <img src="/images/trust-relations.svg" alt="Trust Relations in Swaptacular">
+</div>
