@@ -60,7 +60,7 @@ Back to our restaurant example: Paul would be the *currency
 issuer*. Paul's partners, employees, and customers would be the
 *currency holders*.
 
-If Paul really is a powerful and respected man in his neighborhoods,
+If Paul really is a powerful and respected man in his neighborhood,
 chances are that he will be able to find enough buyers for the
 [IOUs](https://en.wikipedia.org/wiki/IOU) that he issues, so that he
 can replace the ventilation system without a bank loan.
@@ -74,13 +74,10 @@ the digital currency issued by the nearby hair salon.
 The good thing is that Paul did not lose sleep. He chose his
 allies. He assigned the *debtors agent* with the responsibility to
 manage his digital currency. If Paul was technically savvy, and did
-not want to trust anybody with this important task, he could set up
-his own debtors agent and accounting authority severs, over which he
-would have complete control.
+not want to trust somebody else with this important task, he could set
+up his own *debtors agent* and *accounting authority* severs, over
+which he would have a complete control.
 
 Paul's partners, employees, and customers should not be unhappy
 too. They chose to trust Paul, and they assigned the *creditors agent*
-with the responsibility to manage their digital wallets. If they were
-technically savvy, and did not want to trust anybody with this
-important task, they could set up their own creditors agents servers,
-over which they would have complete control.
+with the responsibility to manage their digital wallets.
