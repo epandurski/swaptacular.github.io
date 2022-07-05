@@ -6,7 +6,6 @@ description: >
   Swaptacular's network.
 author: Evgeni Pandurski
 tags: [intro]
-published: false
 ---
 
 Imagine this: Paul is an owner of a restaurant. The business is good.
@@ -25,7 +24,7 @@ respected man in his neighborhood. Hundreds of people dine at his
 restaurant every day. And yet, a broken ventilation system forces him
 to make dubious partners. What a pity!
 
-But it was entirely Paul's own fault, you may say. Everybody knows
+But this was entirely Paul's own fault, you may say. Everybody knows
 that smart people save money for a rainy day! True. However, the
 problem is that every penny anyone saves, is someone else's bank
 loan. So, for every smart Paul, there *must* be at least one "stupid"
@@ -43,9 +42,8 @@ actors:
   <img src="/images/trust-relations.svg" alt="Trust Relations in Swaptacular">
 </div>
 
-Here is how things would work for our restaurant example: Paul would
-be the *currency issuer*. Paul's partners, employees, and customers
-would be the *currency holders*.
+In our restaurant example: Paul would be the *currency issuer*. Paul's
+partners, employees, and customers would be the *currency holders*.
 
 If Paul really is an influential and respected man in his
 neighborhood, chances are that he will be able to find enough buyers
@@ -72,21 +70,28 @@ with the responsibility to manage their digital wallets.
 ## Let the network do its magic
 
 As the word of Paul's success passes from mouth to ear, more and more
-businesses in the neighborhood decide to act smart, and follow Paul's
-lead.
+businesses in the neighborhood may decide to act smart, and follow
+Paul's lead.
 
-> In Swaptacular, contrary to the way bank loans work, the more people
-> start acting smart, the better live becomes for everyone.
+- More businesses joining the network, means that more and more
+  different goods and services will become available, not for money,
+  but for tokens that businesses themselves can issue, backed by their
+  produce.
 
-As more businesses join the network, more and more different goods and
-services become available, not for money, but for tokens that
-businesses themselves can issue, backed by their produce.
+- More goods and services available not for money, means that more and
+  more customers will start paying for the stuff they need, not with
+  money, but with the digital currency issued by the vendor.
 
-More and more customers start buying the stuff they need, directly
-using the digital currency issued by the vendor. More and more
-employees receive some portion of their salaries in the digital
-currency issued by their employer. Then, they [easily
-swap](/2022/07/03/what-is-a-currency-peg/) the currencies that they
-have, but do not need, with the currencies they need.
+- More employees receiving some portion of their salaries in the
+  digital currency issued by their employer, means that more and more
+  people will want to [automatically
+  swap](/2022/07/03/what-is-a-currency-peg/) the currencies that they
+  have, but do not need, with the currencies they need.
+
+<div class="message">
+  <b>Insight:</b> In Swaptacular, contrary to the way bank loans work,
+  the more people start acting smart, the better live becomes for
+  everyone.
+</div>
 
 Isn't this truly Swaptacular! 😀
