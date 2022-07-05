@@ -84,8 +84,8 @@ businesses themselves can issue, backed by their produce.
 
 More and more customers buy the stuff they need, directly using the
 digital currency issued by the vendor. More and more employees receive
-some portion of their salaries directly in the digital currency issued
-by their employer. Then, they [easily
+some portion of their salaries in the digital currency issued by their
+employer. Then, they [easily
 swap](/2022/07/03/what-is-a-currency-peg/) the currencies that they
 have, but do not need, with the currencies they need.
 
