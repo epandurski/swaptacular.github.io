@@ -52,7 +52,7 @@ neighborhood, chances are that he will be able to find enough buyers
 for the [IOUs](https://en.wikipedia.org/wiki/IOU) that he issues, so
 that he can replace the ventilation system without a bank loan.
 
-Perhaps Paul's customers will be happy to pay for their dinner with
+Perhaps Paul's customers will be happy to pay for their dinners with
 Paul's digital currency, instead of money. Perhaps Paul's employees
 would not mind to receive some portion of their salaries in Paul's
 digital currency as well. After all, they could easily exchange it for
@@ -82,10 +82,10 @@ As more businesses join the network, more and more different goods and
 services become available, not for money, but for tokens that
 businesses themselves can issue, backed by their produce.
 
-More and more customers buy the stuff they need, directly using the
-digital currency issued by the vendor. More and more employees receive
-some portion of their salaries in the digital currency issued by their
-employer. Then, they [easily
+More and more customers start buying the stuff they need, directly
+using the digital currency issued by the vendor. More and more
+employees receive some portion of their salaries in the digital
+currency issued by their employer. Then, they [easily
 swap](/2022/07/03/what-is-a-currency-peg/) the currencies that they
 have, but do not need, with the currencies they need.
 
