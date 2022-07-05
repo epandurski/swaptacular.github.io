@@ -6,7 +6,7 @@ description: >
   Swaptacular's network.
 author: Evgeni Pandurski
 tags: [intro]
-published: true
+published: false
 ---
 
 Imagine this: Paul is an owner of a restaurant. The business is good.
