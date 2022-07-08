@@ -32,7 +32,7 @@ Imagine somebody whose digital currency is very popular, stable, and
 highly trusted. Inevitably, people will start hoarding this currency,
 using it more and more as a store of value, and less and less to buy
 things with it. Depending on the situation, this may, or may not be
-what the issuer wants:
+what the issuer wants. For example:
 
 * If the issuer sells durable goods, he/she will most probably need to
   keep some amount of goods in store. Normally, the more currency
@@ -43,7 +43,7 @@ what the issuer wants:
   goods.
 
 * If the issuer has enough collateral, in the form of real estate, to
-  back his/her currency, but urgently needs money for investment or
+  back the currency, but he/she urgently needs money for investment or
   servicing debt, then increasing the interest rate might be a clever
   thing to do. This would encourage the hoarding of the issuer's
   currency, and may allow him/her to issue more
