@@ -60,8 +60,8 @@ The good thing is that Paul did not lose sleep. He chose his
 partners. He assigned the *debtors agent* with the responsibility to
 manage his digital currency. If Paul did not want to trust somebody
 else with this important task, he could set up and run his own
-*debtors agent* and *accounting authority* severs, over which he would
-have a complete control.
+*debtors agent* and *accounting authority* servers, over which he
+would have a complete control.
 
 Paul's partners, employees, and customers should not be unhappy
 too. They chose to trust Paul, and they assigned the *creditors agent*
