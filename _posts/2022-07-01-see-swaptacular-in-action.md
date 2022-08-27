@@ -7,8 +7,8 @@ tags: [intro]
 ---
 
 After months of hard work on the [Currency Issuer
-UI](https://github.com/epandurski/swpt_debtors_ui), and the [Currency
-Holder UI](https://github.com/epandurski/swpt_creditors_ui), I am
+UI](https://github.com/swaptacular/swpt_debtors_ui), and the [Currency
+Holder UI](https://github.com/swaptacular/swpt_creditors_ui), I am
 happy to show something that works reasonably well (fingers crossed).
 
 There are two apps: [My currency]({{ site.app_demo.debtors_webapp}})

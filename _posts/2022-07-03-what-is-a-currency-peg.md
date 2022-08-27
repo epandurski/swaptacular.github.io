@@ -141,7 +141,7 @@ currencies is not an easy task. One proven strategy is to have
 specialized *currency exchange hubs*, which operate for
 profit. Another promising strategy is to implement automatic currency
 exchanges in the spirit of [Circular Multilateral
-Barter](https://epandurski.github.io/swaptacular/cmb/cmb-general.pdf).
+Barter](/public/docs/cmb-general.pdf).
 
 Allowing automatic currency exchanges in Swaptacular has been a key
 goal since the beginning. All the underlying protocols are designed to
