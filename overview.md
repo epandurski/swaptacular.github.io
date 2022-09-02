@@ -94,6 +94,9 @@ All the above implementations try to:
 4. Demonstrate that an implementation that does scale very well
    horizontally, is indeed possible.
 
+[This repository](https://github.com/epandurski/swaptacular)
+demonstrates how all these services can be run together.
+
 
 ## Remaining work
 
