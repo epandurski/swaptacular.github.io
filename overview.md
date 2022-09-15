@@ -72,9 +72,22 @@ their choice, Swaptacular recommends creditors agents to follow the
 
 Since interchangeability of client applications for currency issuing
 is not of critical importance, Swaptacular does not make
-recommendations about the *Issuing Web API*. The current reference
+recommendations about the *Issuing Web API*. (The current reference
 implementation uses a [Simple Issuing Web
-API](/public/docs/swpt_debtors/redoc.html).
+API](/public/docs/swpt_debtors/redoc.html).)
+
+Swaptacular takes the interoperability between different
+implementations very seriously, and tries to produce precise, clear,
+and concise specifications for every important aspect of the system:
+
+* [JSON Serialization for the Swaptacular Messaging
+  Protocol](/public/docs/protocol-json.pdf)
+* [The "swpt" URI Scheme](/public/docs/swpt-uri-scheme.pdf)
+* [Digital Coins in Swaptacular](/public/docs/digital-coin-urls.pdf)
+* [CoinInfo JSON Documents](/public/docs/coin-info-documents.pdf)
+* [Payment Requests and Transfers in
+  Swaptacular](/public/docs/payment-requests.pdf)
+* [PR-zero Payment Request Documents](/public/docs/pr0-documents.pdf)
 
 
 ## Reference implementations
