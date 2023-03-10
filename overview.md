@@ -98,6 +98,7 @@ and concise specifications for every important aspect of the system:
 * [Service that manages OAuth2 login and consent](https://github.com/swaptacular/swpt_login)
 * [Currency Issuer UI](https://github.com/swaptacular/swpt_debtors_ui)
 * [Currency Holder UI](https://github.com/swaptacular/swpt_creditors_ui)
+* [Swaptacular Web API reverse proxy](https://github.com/swaptacular/swpt_apiproxy)
 
 All the above implementations try to:
 
