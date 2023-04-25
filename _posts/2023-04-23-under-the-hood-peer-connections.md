@@ -8,54 +8,73 @@ tags: [under-the-hood, intro]
 ---
 
 In a series of posts, starting with this one, I will try to explain how
-different things in Swaptacular work "under the hood", without requiring a
-degree in computer science from the reader.
+different things in Swaptacular work "under the hood", hopefully without
+requiring a degree in computer science from the reader.
 
-The topic of this post is: How the participants in Swaptacular's
-peer-to-peer network, are able to set up reliable, permanent network
-connections between themselves?
+The topic of this post is: How peers in Swaptacular's network set up
+reliable connections between themselves?
 
 <!--more-->
 
-As I [explained earlier](/overview/), Swaptacular allows different
-organizations and individuals to form decentralized financial networks. For
-example, if a *creditors agent* node wants its users (currency holders), to
-be able to make payments in a currency that is managed by a given
-*accounting authority* node, a reliable network connection should be set up,
-between the creditors agent and the given accounting authority. This network
-connection should be:
+As I [explained earlier](/overview/), in Swaptacular, different
+organizations and individuals can connect with each other, and form a
+decentralized financial network. For example, if a *creditors agent* wants
+its users (that is: currency holders), to be able to make payments in a
+currency that is managed by a known *accounting authority*, a reliable
+network connection should be set up, between the creditors agent and the
+accounting authority. This network connection should be:
 
 1. **Permanent** — Ideally, currency holders should be able to access their
    accounts "in perpetuity". In particular: replacing, or moving the servers
    of one or both of the peers to a new network location, may temporarily
    disturb the established connection, but should not destroy it.
 
-2. **Authenticated** — Both peers should be 100% sure who they are
-   communicating with.
+2. **Bi-directional** — Both peers should be able to initiate a client
+   connection to other peer's servers, and send messages. This way, if there
+   are no messages to be sent, the network connection can be temporarily
+   closed, and re-opened again when needed.
+
+3. **Authenticated** — Both peers should be able to verify with 100%
+   certainty who they are communicating with.
    
-3. **Encrypted** — A third party should not be able to eavesdrop on the
+4. **Encrypted** — A third party should not be able to eavesdrop on the
    communication.
 
-Luckily, there is a very well-known technology that can easily solve all of
-the above problems. This technology is
-[SSL](https://en.wikipedia.org/wiki/Transport_Layer_Security). You may have
-heard that Web-sites use SSL to encrypt their traffic, but SSL is capable of
-much more than that: It allows everyone to create its own [certificate
+Luckily, there is a very well-known technology that meets the above
+requirements. This technology is
+[SSL](https://en.wikipedia.org/wiki/Transport_Layer_Security) ("Transport
+Layer Security" is another name for it). You may have heard that Web-sites
+use SSL to encrypt their traffic, but SSL is capable of much more than that:
+It allows everyone to create its own [certificate
 authority](https://en.wikipedia.org/wiki/Certificate_authority) (CA), which
-is capable of signing [digital
-certificates](https://en.wikipedia.org/wiki/Public_key_certificate), which
-can form a [chain of trust](https://en.wikipedia.org/wiki/Chain_of_trust).
+can sign [digital
+certificates](https://en.wikipedia.org/wiki/Public_key_certificate), and
+those certificates can form a [chain of
+trust](https://shagihan.medium.com/what-is-certificate-chain-and-how-to-verify-them-be429a030887).
 
-In Swaptacular, every node should run its own certificate authority (the
-node's *root-CA*). This is not as complicated as it may sound. For example,
-you may dedicate your old laptop to this job. The most difficult part is to
-keep the private key of your certificate authority secret, while not losing
-access to it yourself.
+In Swaptacular, every network node runs its own trusted certificate
+authority (*root-CA*), and issues a self-signed certificate to itself. This
+is not as complicated as it may sound. [Using these simple
+scripts](https://github.com/swaptacular/swpt_ca_scripts), you can easily
+turn your old laptop into a Swaptacular certificate authority. The most
+difficult part will be to keep the private key of your root-CA secret, while
+not losing access to it yourself. Fortunately, you will not use this private
+key very often, and normally it will stay safely stored on an USB stick
+somewhere, encrypted with a long password.
 
-Fortunately, the private key for your node's root-CA will be rarely needed —
-only when a new peer is added, or when new servers are installed. Therefore,
-normally your private key will stay safely stored on a USB stick, encrypted
-with a long password.
+Instead of using your precious root-CA private key directly, you will use it
+mostly to sign *peer certificates*, and *server certificates*.
+
+- **Peer certificates** you give to your peers, so that they can prove their
+  identity before your servers.
+
+- **Server certificates** will be used by your servers, so that they can
+  prove their identity before your peers. Losing the private key for a
+  server certificate is not a problem, as long as it has not been stolen by
+  hackers — you simply generate a new private key for your servers, and use
+  your root-CA private key to sign a new server certificate.
+
+A picture is worth a thousand words:
 
 <div class="message">
   <img src="/images/swpt-peercerts.svg" alt="Peer Certificate Authorities">
