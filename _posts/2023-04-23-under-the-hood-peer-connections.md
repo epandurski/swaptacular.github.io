@@ -57,13 +57,13 @@ authority (*root-CA*), and issues a self-signed certificate to itself. This
 is not as complicated as it may sound. [Using these simple
 scripts](https://github.com/swaptacular/swpt_ca_scripts), you can easily
 turn your old laptop into a Swaptacular certificate authority. The most
-difficult part will be to keep the private key of your root-CA secret, while
-not losing access to it yourself. Fortunately, you will not use this private
-key very often, and normally it will stay safely stored on an USB stick
+difficult part will be to keep your root-CA private key secret, while not
+losing access to it yourself. Fortunately, you will not use this private key
+very often, and normally it will stay safely stored on an USB stick
 somewhere, encrypted with a long password.
 
 Instead of using your precious root-CA private key directly, you will use it
-mostly to sign *peer certificates*, and *server certificates*.
+only to sign *peer certificates*, and *server certificates*.
 
 - **Peer certificates** you give to your peers, so that they can prove their
   identity before your servers.
@@ -101,3 +101,9 @@ certificate authority (sub-CA), but do not allow it to alter the *subject
 name* on the subsequently signed certificates. This gorgeous SSL feature is
 called "[name
 constraints](https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.10)".
+
+-----
+
+In further posts, I will talk about the message transfer protocol that the
+servers use to send messages to each other, through the authenticated SSL
+connections between the peers.
