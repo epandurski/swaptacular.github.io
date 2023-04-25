@@ -16,7 +16,7 @@ reliable connections between themselves?
 
 <!--more-->
 
-As I [explained earlier](/overview/), in Swaptacular, different
+[As I explained earlier](/overview/), in Swaptacular, different
 organizations and individuals can connect with each other, and form a
 decentralized financial network. For example, if a *creditors agent* wants
 its users (that is: currency holders), to be able to make payments in a
@@ -79,3 +79,25 @@ A picture is worth a thousand words:
 <div class="message">
   <img src="/images/swpt-peercerts.svg" alt="Peer Certificate Authorities">
 </div>
+
+For example, if Peer 1's servers want to open a client connection to Peer
+2's servers, they will be able to authenticate themselves by presenting the
+following chain of certificates:
+
+* Peer 1's Server Key
+* Peer 1's Root CA
+* Peer 2's Root CA — **trusted by Peer 2's servers!**
+
+On the other hand, Peer 2's servers in order to prove to the connecting
+clients, that they really are the Peer 2's servers, will present the
+following chain of certificates:
+
+* Peer 2's Server Key
+* Peer 2's Root CA — **exactly what Peer 1's servers expected!**
+
+A small, but very important technical detail here is that all peer
+certificates allow the other peer's root-CA, to act as an intermediate
+certificate authority (sub-CA), but do not allow it to alter the *subject
+name* on the subsequently signed certificates. This gorgeous SSL feature is
+called "[name
+constraints](https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.10)".
