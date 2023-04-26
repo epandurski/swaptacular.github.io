@@ -3,7 +3,6 @@ layout: post
 title: Under the Hood — Peer Connections
 description: Explains how authenticated SSL connections between Swaptacular peers work
 author: Evgeni Pandurski
-published: false
 tags: [under-the-hood, intro]
 ---
 
@@ -98,11 +97,9 @@ following chain of certificates:
 A small, but very important technical detail here is that all peer
 certificates allow the other peer's root-CA, to act as an intermediate
 certificate authority (sub-CA), but do not allow it to alter the *subject
-name* on the subsequently signed certificates. This gorgeous SSL feature is
-called "[name
+name* on the subsequently signed certificates. This SSL feature is called
+"[name
 constraints](https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.10)".
-
------
 
 In further posts, I will talk about the message transfer protocol that the
 servers use to send messages to each other, through the authenticated SSL
