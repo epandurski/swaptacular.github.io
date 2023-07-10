@@ -102,6 +102,7 @@ and concise specifications for every important aspect of the system:
 * [Currency Holder UI](https://github.com/swaptacular/swpt_creditors_ui)
 * [Swaptacular Web API reverse proxy](https://github.com/swaptacular/swpt_apiproxy)
 * [STOMP protocol client and server](https://github.com/swaptacular/swpt_stomp)
+* [Managing Swaptacular certificate authorities](https://github.com/swaptacular/swpt_ca_scripts)
 
 All the above implementations try to:
 
