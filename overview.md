@@ -82,6 +82,7 @@ and concise specifications for every important aspect of the system:
 
 * [STOMP Message Transport for the Swaptacular Messaging
   Protocol](/public/docs/swpt-stomp.pdf)
+* [Swaptacular SSL/TLS Certificates](/public/docs/swpt-certificates.pdf)
 * [JSON Serialization for the Swaptacular Messaging
   Protocol](/public/docs/protocol-json.pdf)
 * [The "swpt" URI Scheme](/public/docs/swpt-uri-scheme.pdf)
