@@ -10,7 +10,7 @@ published: false
 ---
 
 In [a previous post](/2023/04/26/under-the-hood-peer-connections/) I
-explained how peers in Swaptacular’s network set up authenticated
+explained how peers in Swaptacular’s network establish authenticated SSL/TLS
 connections between themselves.
 
 In this post, I will continue this thread, and will explain how the servers
@@ -48,6 +48,14 @@ certificates is streamlined into 4 simple steps:
 
 **Note:** The above 4 steps can be performed in a slightly different order,
 and the final result will be the same.
+
+## The STOMP protocol
+
+Now that we know how Swaptacular nodes issue peer certificates to each
+other, and how they can use them to establish authenticated SSL/TLS
+connections, we can talk in more detail about message transport protocols.
+
+TODO
 
 In further posts, I will try to explain how the [Swaptacular Messaging
 Protocol](/public/docs/protocol.pdf) works.
