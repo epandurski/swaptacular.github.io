@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Under the Hood — STOMP
+title: Under the Hood — Message Transport
 description: >
   Explains the message transport protocol that Swaptacular servers use
   to send messages to each other.
