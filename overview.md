@@ -123,7 +123,7 @@ demonstrates how all these services can be run together.
 - [x] Implement a user friendly UI for making and receiving payments.
 - [x] Define and implement a standard serialization for the messaging
   protocol.
-- [ ] Allow creditors/debtors agents to easily connect to multiple
+- [x] Allow creditors/debtors agents to easily connect to multiple
   accounting authorities, using user friendly UI and/or configuration
   files.
 - [ ] Implement circular currency exchanges.
