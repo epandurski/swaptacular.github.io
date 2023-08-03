@@ -28,9 +28,12 @@ two random Swaptacular network nodes (an *accounting authority* node and a
 Every Swaptacular network node should publish an *info-bundle file*, which
 all potential peers can obtain. The info-bundle file should contain:
 
-- The node's *root certificate* (self-signed).
+- The node's [root certificate](/public/docs/swpt-certificates.pdf)
+  (self-signed).
 
-- A *certificate signing request* (signed with root-CA's private key).
+- A [certificate signing
+  request](https://en.wikipedia.org/wiki/Certificate_signing_request)
+  (signed with root-CA's private key).
 
 - A *directory of files*, providing additional information about the node.
   Any file can be included in this directory, but the included files most
