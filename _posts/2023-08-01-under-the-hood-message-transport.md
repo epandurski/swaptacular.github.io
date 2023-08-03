@@ -20,8 +20,8 @@ other.
 <!--more-->
 
 Before we dive deeper into message transport protocols, let me explain how
-two random Swaptacular network nodes (an *accounting authority* node and a
-*creditors agent* node, for example) can become peers.
+two random [Swaptacular network nodes](/overview/) (for example, an
+*accounting authority* node, and a *creditors agent* node) can become peers.
 
 ## Info-bundle files
 
