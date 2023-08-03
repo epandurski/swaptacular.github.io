@@ -78,7 +78,7 @@ In fact, in order to be fully interoperable with all other nodes, each
 Swaptacular node must support only a [subset of the STOMP
 protocol](/public/docs/swpt-stomp.pdf). Each node's *info-bundle file*, in
 its included *directory of files*, should contain a `stomp.toml` file at the
-directory root. This file should contain all the necessary technical
+directory root. This file incorporates all the necessary technical
 information about the STOMP servers that the node runs.
 
 ## Message serialization
