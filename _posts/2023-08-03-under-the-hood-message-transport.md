@@ -42,7 +42,7 @@ all potential peers can obtain. The info-bundle file contains:
   private key, so that the authenticity of the information can be verified.
 
 Using the info-bundle files, the process of obtaining technical and contact
-information about the other peer, and issuing and exchanging peer
+information about the other node, and issuing and exchanging peer
 certificates, is streamlined into 4 simple steps:
 
 <div class="message">
