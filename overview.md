@@ -113,8 +113,11 @@ All the above implementations try to:
 4. Demonstrate that an implementation that does scale very well
    horizontally, is indeed possible.
 
-[This repository](https://github.com/epandurski/swaptacular)
-demonstrates how all these services can be run together.
+You can see examples how to run the different kinds of Swaptacular nodes
+[here](https://github.com/swaptacular/swpt_accounts/blob/master/docker-compose-all.yml),
+[here](https://github.com/swaptacular/swpt_creditors/blob/master/docker-compose-all.yml),
+and
+[here](https://github.com/swaptacular/swpt_debtors/blob/master/docker-compose-all.yml).
 
 
 ## Remaining work
