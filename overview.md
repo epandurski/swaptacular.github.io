@@ -80,6 +80,7 @@ Swaptacular takes the interoperability between different
 implementations very seriously, and tries to produce precise, clear,
 and concise specifications for every important aspect of the system:
 
+* [Swaptacular Messaging Protocol](/public/docs/protocol.pdf)
 * [STOMP Message Transport for the Swaptacular Messaging
   Protocol](/public/docs/swpt-stomp.pdf)
 * [JSON Serialization for the Swaptacular Messaging
@@ -90,6 +91,7 @@ and concise specifications for every important aspect of the system:
 * [Payment Requests and Transfers in
   Swaptacular](/public/docs/payment-requests.pdf)
 * [PR-zero Payment Request Documents](/public/docs/pr0-documents.pdf)
+* [Payments Web API Specification](/public/docs/swpt_creditors/redoc.html)
 
 
 ## Reference implementations
