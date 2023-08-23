@@ -81,11 +81,11 @@ implementations very seriously, and tries to produce precise, clear,
 and concise specifications for every important aspect of the system:
 
 * [Swaptacular Messaging Protocol](/public/docs/protocol.pdf)
+* [JSON Serialization for the Swaptacular Messaging
+  Protocol](/public/docs/protocol-json.pdf)
 * [STOMP Message Transport for the Swaptacular Messaging
   Protocol](/public/docs/swpt-stomp.pdf)
 * [Swaptacular SSL/TLS Certificates](/public/docs/swpt-certificates.pdf)
-* [JSON Serialization for the Swaptacular Messaging
-  Protocol](/public/docs/protocol-json.pdf)
 * [RootConfigData JSON Documents](/public/docs/root-config-data.pdf)
 * [The "swpt" URI Scheme](/public/docs/swpt-uri-scheme.pdf)
 * [Digital Coins in Swaptacular](/public/docs/digital-coin-urls.pdf)
