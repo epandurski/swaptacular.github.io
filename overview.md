@@ -83,8 +83,10 @@ and concise specifications for every important aspect of the system:
 * [Swaptacular Messaging Protocol](/public/docs/protocol.pdf)
 * [STOMP Message Transport for the Swaptacular Messaging
   Protocol](/public/docs/swpt-stomp.pdf)
+* [Swaptacular SSL/TLS Certificates](/public/docs/swpt-certificates.pdf)
 * [JSON Serialization for the Swaptacular Messaging
   Protocol](/public/docs/protocol-json.pdf)
+* [RootConfigData JSON Documents](/public/docs/root-config-data.pdf)
 * [The "swpt" URI Scheme](/public/docs/swpt-uri-scheme.pdf)
 * [Digital Coins in Swaptacular](/public/docs/digital-coin-urls.pdf)
 * [CoinInfo JSON Documents](/public/docs/coin-info-documents.pdf)
@@ -114,8 +116,11 @@ All the above implementations try to:
 4. Demonstrate that an implementation that does scale very well
    horizontally, is indeed possible.
 
-[This repository](https://github.com/epandurski/swaptacular)
-demonstrates how all these services can be run together.
+You can see examples how to run the different kinds of Swaptacular nodes
+[here](https://github.com/swaptacular/swpt_accounts/blob/master/docker-compose-all.yml),
+[here](https://github.com/swaptacular/swpt_creditors/blob/master/docker-compose-all.yml),
+and
+[here](https://github.com/swaptacular/swpt_debtors/blob/master/docker-compose-all.yml).
 
 
 ## Remaining work
@@ -124,7 +129,7 @@ demonstrates how all these services can be run together.
 - [x] Implement a user friendly UI for making and receiving payments.
 - [x] Define and implement a standard serialization for the messaging
   protocol.
-- [ ] Allow creditors/debtors agents to easily connect to multiple
+- [x] Allow creditors/debtors agents to easily connect to multiple
   accounting authorities, using user friendly UI and/or configuration
   files.
 - [ ] Implement circular currency exchanges.
