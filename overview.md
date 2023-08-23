@@ -85,6 +85,7 @@ and concise specifications for every important aspect of the system:
 * [Swaptacular SSL/TLS Certificates](/public/docs/swpt-certificates.pdf)
 * [JSON Serialization for the Swaptacular Messaging
   Protocol](/public/docs/protocol-json.pdf)
+* [RootConfigData JSON Documents](/public/docs/root-config-data.pdf)
 * [The "swpt" URI Scheme](/public/docs/swpt-uri-scheme.pdf)
 * [Digital Coins in Swaptacular](/public/docs/digital-coin-urls.pdf)
 * [CoinInfo JSON Documents](/public/docs/coin-info-documents.pdf)
