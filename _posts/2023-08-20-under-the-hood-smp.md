@@ -177,3 +177,14 @@ debtor's account". The debtor’s account is special in the following ways:
 * Each debtor can use its debtor's account ``config_data`` text field, to
   configure various important parameters of the currency (like the interest
   rate).
+
+## Conclusion
+
+In this post I explained in broad strokes how the Swaptacular Messaging
+Protocol works. I tried to demonstrate the most important use cases, but SMP
+being a relatively complex protocol, a lot of use cases still remain in the
+dark. You can check [the protocol specification](/public/docs/protocol.pdf)
+for more details.
+
+In further posts, I will talk about the [Payments Web API
+Specification](/public/docs/swpt_creditors/redoc.html).
