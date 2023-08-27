@@ -75,6 +75,11 @@ so as to create the new account, and sometime later, to delete the account:
 
 In the diagram above, there are several things that are worth mentioning:
 
+* Every new account receives an account identifier (see the `account_id`
+  text field). The *(debtor_id, account_id)* pair uniquely identifies each
+  SMP account. To send money to a given account, the payer must know both
+  the debtor ID, and the account identifier.
+
 * The `config_data` text field allows the owner of the account to set
   additional configuration parameters on the account. Different accounting
   authority node implementations may support different configuration
@@ -144,8 +149,6 @@ Let me draw your attention to several important things in the above diagram:
   *coordinators*. In reality, the owner of the account is just a somewhat
   special "direct" type of coordinator. This fact is represented by the
   field `coordinator_type` in the exchanged SMP messages.
-
-TODO: account identifiers
 
 ## Debtor's accounts
 
