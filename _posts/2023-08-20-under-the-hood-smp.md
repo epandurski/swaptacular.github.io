@@ -150,7 +150,30 @@ Let me draw your attention to several important things in the above diagram:
   special "direct" type of coordinator. This fact is represented by the
   field `coordinator_type` in the exchanged SMP messages.
 
-## Debtor's accounts
+## Debtors' accounts
 
-TODO: Explain that debtors use the same protocol, but creditor_id is zero
-for debtors' accounts.
+In the previous examples I explained how accounts are created, deleted, and
+money transferred from one account to another. I did not explain, however,
+how the amounts of money that we moved around went into existence in the
+first place. If every account that a currency holder creates starts out with
+no money in it, where the money originally comes from?
+
+The answer is quite simple: **The money comes from the debtor's account.**
+
+We saw how creditors agent nodes use the Swaptacular Messaging Protocol
+(SMP) to communicate with the accounting authority nodes. However, *debtors
+agent nodes*, in exactly the same way, use SMP to communicate with the
+accounting authority node which they are connected to. The only difference
+is that each currency issuer (aka debtor) uses a special account called "the
+debtor's account". The debtor’s account is special in the following ways:
+
+* Every debtor has exactly one debtor's account. The creditor ID of each
+  debtor's account is 0. (The creditor IDs of "normal" currency holder
+  accounts can not be 0.)
+
+* The balance on the debtor's account can go negative, thus allowing the
+  debtor to create money into existence.
+
+* Each debtor can use its debtor's account ``config_data`` text field, to
+  configure various important parameters of the currency (like the interest
+  rate).
