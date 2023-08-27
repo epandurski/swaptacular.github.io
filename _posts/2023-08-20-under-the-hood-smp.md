@@ -134,8 +134,18 @@ Let me draw your attention to several important things in the above diagram:
   to the recipient, protecting him/her from being spammed with lots of
   worthless incoming payments.
 
-TODO: Explain coordinator_type, coordinator_request_id, account identifiers,
+* The owner of one account is not the only entity that is able to initiate
+  transfers from the account. Interest payments are a good example. When the
+  interest rate is negative, interest payments must be made regularly from
+  the owner's account, initiated by some automated system.
 
+  Automated systems internal to the accounting authority node, which can
+  initiate transfers on behalf of the account's owner, are called
+  *coordinators*. In reality, the owner of the account is just a somewhat
+  special "direct" type of coordinator. This fact is represented by the
+  field `coordinator_type` in the exchanged SMP messages.
+
+TODO: account identifiers
 
 ## Debtor's accounts
 
