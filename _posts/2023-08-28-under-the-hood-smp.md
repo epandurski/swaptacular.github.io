@@ -161,7 +161,7 @@ no money in it, where the money originally comes from?
 The answer is quite simple: **The money comes from the debtor's account.**
 
 We saw how creditors agent nodes use the Swaptacular Messaging Protocol
-(SMP) to communicate with the accounting authority nodes. However, *debtors
+(SMP) to communicate with accounting authority nodes. However, *debtors
 agent nodes*, in exactly the same way, use SMP to communicate with the
 accounting authority node which they are connected to. The only difference
 is that each currency issuer (aka debtor) uses a special account called "the
@@ -175,8 +175,8 @@ debtor's account". The debtor’s account is special in the following ways:
   debtor to create money into existence.
 
 * Each debtor can use its debtor's account ``config_data`` text field, to
-  configure various important parameters of the currency (like the interest
-  rate).
+  [configure various important parameters of the
+  currency](/public/docs/root-config-data.pdf) (like the interest rate).
 
 ## Conclusion
 
