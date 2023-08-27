@@ -73,7 +73,26 @@ so as to create the new account, and sometime later, to delete the account:
        alt="Creating an account, and then deleting it">
 </div>
 
-TODO: Explain config_data, negligible_amount, scheduled_for_deletion.
+In the diagram above, there are several things that are worth mentioning:
+
+* The `config_data` text field allows the owner of the account to set
+  additional configuration parameters on the account. Different accounting
+  authority node implementations may support different configuration
+  parameters.
+
+* The `negligible_amount` field is used to decide whether an account can be
+  safely deleted, and whether an incoming transfer is insignificant and can
+  be ignored. The latter allows account owners to protect themselves from
+  being spammed with lots of worthless incoming payments.
+
+* The `scheduled_for_deletion` configuration flag indicates that the owner
+  of the account wants to close the account. Note that when the remaining
+  account balance is non-negligible, deleting the account will result in the
+  loss of a potentially significant amount of money. For this reason, the
+  deletion of the account will be postponed until the remaining account
+  balance becomes negligible.
+
+## Making and receiving payments
 
 <div class="message">
   <img src="/images/smp-commit-transfer.svg"
