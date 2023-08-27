@@ -94,14 +94,50 @@ In the diagram above, there are several things that are worth mentioning:
 
 ## Making and receiving payments
 
+In our imaginary scenario, once the currency holder has received some amount
+of money on his newly created account, he will want to make a payment to
+someone else's account. The next diagram shows the messages that will be
+exchanged in order to make this payment:
+
 <div class="message">
   <img src="/images/smp-commit-transfer.svg"
        alt="Creating an account, and then deleting it">
 </div>
 
+Let me draw your attention to several important things in the above diagram:
+
+* Every transfer is committed in two phases: First the transfer is
+  *prepared*, and then the prepared transfer is *committed* (or
+  alternatively, the prepared transfer could be *dismissed*).
+
+* When preparing a transfer, the payer has the option to request some amount
+  of money to be *locked* (that is: at least `min_locked_amount`, but no
+  more than `max_locked_amount`). Locking the amount means that it will not
+  be available for other transfers. Once the amount has been set aside, it
+  is almost 100% certain that the future attempt to commit the locked
+  amount, or any amount smaller than the locked amount, will be successful.
+
+  Note that locking is entirely optional, and therefore the
+  `committed_amount` can be equal, smaller, or bigger than the actual locked
+  amount. The only purpose of locking is to guarantee a successful commit in
+  the future. This guarantee allows several prepared transfers to be
+  committed atomically (all or nothing).
+
+* When a transfer has been successfully committed, both the sender an the
+  recipient should receive an "AccountTransfer" message, informing them
+  about the transaction. The `acquired_amount` for both will be the same,
+  but for the sender it will be negative, while for the recipient it will be
+  positive.
+
+  However, if the acquired amount does not exceed the negligible amount
+  configured by the recipient, an "AccountTransfer" message will not be sent
+  to the recipient, protecting him/her from being spammed with lots of
+  worthless incoming payments.
+
 TODO: Explain coordinator_type, coordinator_request_id, account identifiers,
-min/max_lock_amount, lock_amount, transfer_note, committed_amount,
-acquired_amount.
+
+
+## Debtor's accounts
 
 TODO: Explain that debtors use the same protocol, but creditor_id is zero
 for debtors' accounts.
