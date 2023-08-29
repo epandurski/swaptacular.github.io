@@ -37,13 +37,22 @@ details.
 **A fair warning:** This post may become too technical for the taste of some
 readers.
 
-## The scope of the API
+## Overview of the API
 
 TODO:
 
 The creditors agent node acts as a proxy between the currency holder and the
 accounting authority. The PWAPI mostly allows the client to do what the
 Swaptacular Messaging Protocol does, but from a mobile device.
+
+Mention the importance of the support for server-client database
+synchronization, and multiple simultaneous clients:
+
+- Synchronization the client database and the server database. The `log`.
+- Synchronization between two or more clients
+
+Warn about the handling of 64-bit integers by the standard Javascript parser
+and serializer.
 
 ## Authentication and scalability
 
@@ -60,13 +69,6 @@ TODO:
 - Creditor activation
 - Creditor deactivation
 
-## Client database synchronization, multiple clients
-
-TODO:
-
-- Synchronization the client database and the server database. The `log`.
-- Synchronization between two or more clients
-
 ## The creditor's "wallet"
 
 TODO:
@@ -82,10 +84,11 @@ TODO:
 
 Explain the [`swpt` URI scheme](/public/docs/swpt-uri-scheme.pdf).
 
-## API object types
+Explain that to create an account the user needs to provide the currency's
+`DebtorIdentity` object, and to initiate a transfer the user needs to
+provide recipient's `AccountIdentity` object.
 
-Explain how object updates work, and why the `latestUpdateId` is necessary
-to guarantee database consistency.
+## API object types
 
 ### `PaginatedList` objects
 
@@ -95,6 +98,16 @@ TODO
 
 TODO
 
+### `LogEntry` objects
+
+TODO:
+
+Give an example explaining relation between the log entry and the updated
+object `Transfer` object.
+
+Explain how object updates work, and why incrementing the `latestUpdateId`
+is necessary to guarantee database consistency.
+
 ### `CreditorsList`, `Creditor` and `PinInfo`objects
 
 TODO
@@ -103,7 +116,7 @@ TODO
 
 TODO:
 
-Explain how account sub-objects work.
+Explain how the different account sub-objects work.
 
 - `AccountInfo`, `DebtorInfo`
 - `AccountConfig`
@@ -115,10 +128,3 @@ Explain how account sub-objects work.
 ### `TransfersList` and `Transfer` objects
 
 TODO
-
-### `LogEntry` objects
-
-TODO:
-
-Give an example explaining relation between the log entry and the updated
-object `Transfer` object.
