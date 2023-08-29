@@ -36,3 +36,89 @@ details.
 
 **A fair warning:** This post may become too technical for the taste of some
 readers.
+
+## The scope of the API
+
+TODO:
+
+The creditors agent node acts as a proxy between the currency holder and the
+accounting authority. The PWAPI mostly allows the client to do what the
+Swaptacular Messaging Protocol does, but from a mobile device.
+
+## Authentication and scalability
+
+TODO:
+
+- Oauth2
+- Shards, [API Reverse Proxy](https://github.com/swaptacular/swpt_apiproxy)
+
+## The "admin" module
+
+TODO:
+
+- Creditor ID reservation
+- Creditor activation
+- Creditor deactivation
+
+## Client database synchronization, multiple clients
+
+TODO:
+
+- Synchronization the client database and the server database. The `log`.
+- Synchronization between two or more clients
+
+## The creditor's "wallet"
+
+TODO:
+
+The wallet is the gateway to all objects and operations in the API. This
+follows the general REST principle, that client apps should not try to
+assemble URI themselves, but they should use the URIs provided by the
+server.
+
+## Debtor identity and account identity
+
+TODO:
+
+Explain the [`swpt` URI scheme](/public/docs/swpt-uri-scheme.pdf).
+
+## API object types
+
+Explain how object updates work, and why the `latestUpdateId` is necessary
+to guarantee database consistency.
+
+### `PaginatedList` objects
+
+TODO
+
+### `PaginatedStream` objects
+
+TODO
+
+### `CreditorsList`, `Creditor` and `PinInfo`objects
+
+TODO
+
+### `AccountList` and `Account` objects
+
+TODO:
+
+Explain how account sub-objects work.
+
+- `AccountInfo`, `DebtorInfo`
+- `AccountConfig`
+- `AccountDisplay`
+- `AccountExchange`
+- `AccountKnowledge`
+- `AccountLedger`, `LedgerEntry`, `CommittedTransfer`
+
+### `TransfersList` and `Transfer` objects
+
+TODO
+
+### `LogEntry` objects
+
+TODO:
+
+Give an example explaining relation between the log entry and the updated
+object `Transfer` object.
