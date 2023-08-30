@@ -37,22 +37,31 @@ details.
 **A fair warning:** This post may become too technical for the taste of some
 readers.
 
-## Overview of the API
+## API design principles
 
-TODO:
+In essence, every creditors agent node acts as a proxy between currency
+holders and accounting authority nodes. Thus, the main purpose of the
+Payments Web API is to allow client applications to preform the same
+operations that the Swaptacular Messaging Protocol allows, but using a
+synchronous Web API, instead of an asynchronous message protocol.
 
-The creditors agent node acts as a proxy between the currency holder and the
-accounting authority. The PWAPI mostly allows the client to do what the
-Swaptacular Messaging Protocol does, but from a mobile device.
+It is important to mention that PWAPI client applications are not restricted
+to simple mobile apps. A client application, for example, can be corporate
+accounting server, maintaining a database of customers and invoices, and
+processing hundreds of automated transfers per second.
 
-Mention the importance of the support for server-client database
-synchronization, and multiple simultaneous clients:
+Therefore, one of the main design goals for the Payments Web API is to allow
+efficient (in terms of network throughput) synchronization between the
+client's database (containing account balances, incoming and outgoing
+transfers, etc.) and the creditors agent's database.
 
-- Synchronization the client database and the server database. The `log`.
-- Synchronization between two or more clients
+Another important design goal is to allow several client applications (for
+example, several mobile devices which the currency holder owns), to work
+simultaneously without stepping on each others toes.
 
-Warn about the handling of 64-bit integers by the standard Javascript parser
-and serializer.
+Lastly, pure Web apps (that is: JavaScript apps running on a standard
+browser) should be able to work with the API, do that if need be, the
+currency holder can use someone else's computer to access his/hers accounts.
 
 ## Authentication and scalability
 
@@ -89,6 +98,9 @@ Explain that to create an account the user needs to provide the currency's
 provide recipient's `AccountIdentity` object.
 
 ## API object types
+
+Warn about the handling of 64-bit integers by the standard Javascript parser
+and serializer.
 
 ### `PaginatedList` objects
 
