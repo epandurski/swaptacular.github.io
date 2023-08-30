@@ -84,13 +84,33 @@ correct database shard (aka "load balancing"), the reference implementation
 uses a simple [API Reverse
 Proxy](https://github.com/swaptacular/swpt_apiproxy) HTTP server.
 
-## The "admin" module
+## The "admin" endpoints
 
-TODO:
+Because the API relies on external services (OAuth 2.0 servers) for user
+registration and user authentication, some "admin" endpoints must be
+available in the API, to allow external services to create new currency
+holders (aka "creditors"), and to remove existing creditors.
 
-- Creditor ID reservation
-- Creditor activation
-- Creditor deactivation
+- **Creating new creditors (activation)**
+
+  Often the external service will want to know the ID of the new creditor in
+  advance, without actually creating the creditor. For this reason, the
+  creation of new creditors can optionally be done in two-phases: First, a
+  creditor ID is *reserved*, and only then, the creditor is *activated*. If
+  the reserved creditor ID has not been activated within some period time,
+  the reservation expires, and the creditor ID is released.
+
+- **Removing existing creditors (deactivation)**
+
+  Activated creditors can be *deactivated*. A deactivated creditor can not
+  perform any actions in the API, but its creditor ID remain unavailable for
+  some lengthy period of time (5 years for example).
+
+- **Obtaining the list of active creditors**
+
+  External services are also able to obtain the list of all active creditors
+  in the system. This gives external services a "starting point" to
+  synchronize their databases with the main creditor's database.
 
 ## The creditor's "wallet"
 
