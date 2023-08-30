@@ -63,12 +63,26 @@ Lastly, pure Web apps (that is: JavaScript apps running on a standard
 browser) should be able to work with the API, do that if need be, the
 currency holder can use someone else's computer to access his/hers accounts.
 
-## Authentication and scalability
+## Authentication
 
-TODO:
+The API relies on [OAuth 2.0](https://oauth.net/2/) to authenticate the
+users of the API. This gives creditors agents complete freedom to choose the
+authentication scheme that is most appropriate in their context.
 
-- Oauth2
-- Shards, [API Reverse Proxy](https://github.com/swaptacular/swpt_apiproxy)
+## Scalability
+
+When the creditors agent has lots of users, the number of network requests
+per second to the API can become too high for a single database server to
+handle. Therefore, some form of [database
+sharding](https://en.wikipedia.org/wiki/Shard_(database_architecture)) would
+be needed.
+
+PWAPI is designed so as to allow the decision to which database shard to
+send each incoming request, to be taken as early as possible — simply by
+looking at the request's URL. For example, to send each HTTP request to the
+correct database shard (aka "load balancing"), the reference implementation
+uses a simple [API Reverse
+Proxy](https://github.com/swaptacular/swpt_apiproxy) HTTP server.
 
 ## The "admin" module
 
