@@ -154,8 +154,13 @@ example account identity object:
 
 ## API object types
 
-Warn about the handling of 64-bit integers by the standard Javascript parser
-and serializer.
+In this section I will outline the different types of objects that exist in
+the API, and the function of each object type.
+
+**Important note:** Many of the object types contain fields which values are
+64-bit integers. While big integers are perfectly valid JSON, the standard
+[EcmaScript](https://en.wikipedia.org/wiki/ECMAScript) JSON parser and
+serializer do not work correctly with big integers.
 
 ### `PaginatedList` objects
 
@@ -195,3 +200,9 @@ Explain how the different account sub-objects work.
 ### `TransfersList` and `Transfer` objects
 
 TODO
+
+### Swagger UI
+
+Check the [Creditors Agent Swagger
+  UI](https://demo.swaptacular.org/creditors-swagger-ui/) (client_id:
+  `swagger-ui`, client_secret: `swagger-ui`)
