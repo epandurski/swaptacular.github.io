@@ -123,15 +123,34 @@ that client application should not try to assemble
 [URIs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) (links)
 themselves, but all the necessary URIs should be provided by the server.
 
-## Debtor identity and account identity
+## Debtor and account identities
 
-TODO:
+All Swaptacular currencies (aka debtors), and all currency holders accounts
+(aka creditors accounts) are uniquely identified by URIs. These URIs conform
+to the custom "swpt" URI scheme. The syntax for the `swpt:` URI scheme is
+[specified here](/public/docs/swpt-uri-scheme.pdf).
 
-Explain the [`swpt` URI scheme](/public/docs/swpt-uri-scheme.pdf).
+In the API, to create an account with a given currency, the currency holder
+should provide a `DebtorIdentity` object. Here is an example debtor identity
+object:
 
-Explain that to create an account the user needs to provide the currency's
-`DebtorIdentity` object, and to initiate a transfer the user needs to
-provide recipient's `AccountIdentity` object.
+{% highlight json %}
+{
+  "type": "DebtorIdentity",
+  "uri": "swpt:1234"
+}
+{% endhighlight %}
+
+To initiate a transfer, the currency holder should provide the
+`AccountIdentity` object representing the recipient's account: Here is an
+example account identity object:
+
+{% highlight json %}
+{
+  "type": "AccountIdentity",
+  "uri": "swpt:1234/recipient-account"
+}
+{% endhighlight %}
 
 ## API object types
 
