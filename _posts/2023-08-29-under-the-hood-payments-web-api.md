@@ -112,14 +112,16 @@ holders (aka "creditors"), and to remove existing creditors.
   in the system. This gives external services a "starting point" to
   synchronize their databases with the main creditor's database.
 
-## The creditor's "wallet"
+## Creditors' wallets
 
-TODO:
-
-The wallet is the gateway to all objects and operations in the API. This
-follows the general REST principle, that client apps should not try to
-assemble URI themselves, but they should use the URIs provided by the
-server.
+In the API, every activated creditor receives a "wallet". The creditor's
+wallet is an object which mostly contains links to other objects belonging
+to the creditor (accounts, initiated transfers etc.). You may think of the
+wallet object as a gateway to all the other objects and operations in the
+API. The design of the `Wallet` object follows the general REST principle,
+that client application should not try to assemble
+[URIs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) (links)
+themselves, but all the necessary URIs should be provided by the server.
 
 ## Debtor identity and account identity
 
