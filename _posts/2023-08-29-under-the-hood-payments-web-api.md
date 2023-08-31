@@ -226,9 +226,17 @@ obtain the new state of the transfer from *"/example-transfer"*), inferring
 the new state from the supplied "data". The "data" field is just a nice
 little optimization.
 
-### `CreditorsList`, `Creditor` and `PinInfo`objects
+### `PinInfo`objects
 
-TODO
+The API provides *the option* every potentially dangerous operation to be
+protected by a PIN (Personal Identification Number). This can be especially
+useful then the client of the API is a mobile app. In this case, for
+convenience reasons, the user is likely to stay logged in for long periods
+of time, during which other people may get physical access to the user's
+device.
+
+`PinInfo` objects represent the user's PIN, and its current status ("on",
+"off", or "blocked").
 
 ### `AccountList` and `Account` objects
 
