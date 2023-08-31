@@ -186,13 +186,46 @@ for new items. For this, the "PaginatedStream" object type is used:
 
 ### `LogEntry` objects
 
-TODO:
+Client applications should be able to efficiently synchronize their local
+databases with the server's database, even after long disconnected periods.
+For this reason, the API keeps a log of each update to every important
+object.
 
-Give an example explaining relation between the log entry and the updated
-object `Transfer` object.
+The log is a `PaginatedStream` of `LogEntry` objects. The stream contains
+all historical changes to all important objects belonging to a given
+currency holder.
 
-Explain how object updates work, and why incrementing the `latestUpdateId`
-is necessary to guarantee database consistency.
+Every updatable object in the API has a *"latestUpdateId"* field. Each time
+an object is updated, the object's "latestUpdateId" gets incremented, and a
+log entry is added to the log, referring to the updated object and its new
+"latestUpdateId" value:
+
+<div class="message">
+  <img src="/images/log-entry-example.svg"
+       alt="Shows an example log entry">
+</div>
+
+The picture above shows a `LogEntry` object, added to the log to inform
+about the successful finalization of some transfer (and the update of the
+corresponding `Transfer` object). The log entry tells the client that the
+transfer object at *"/example-transfer"* has been updated, and the new
+"version" of the object is "2". After processing this log entry, the client
+may decide to make an additional HTTP request to *"/example-transfer"*, so
+as to obtain the new state of the transfer.
+
+Quite frequently, the client will already have the latest version of the
+updated object in its local database, so that no additional HTTP request
+will be needed. In such cases, the value of log entry's *"objectUpdateId"*
+field will be smaller or equal to the value of the *"latestUpdateId"* field
+from the object in the client's local database.
+
+It is important to mention that for most types of updated objects, a "data"
+field will not be present in the corresponding log entry. However, because
+`Transfer` object updates are quite common, the provided "data" field allows
+the client to never perform an additional HTTP request (the request to
+obtain the new state of the transfer from *"/example-transfer"*), inferring
+the new state from the supplied "data". The "data" field is just an nice
+little optimization.
 
 ### `CreditorsList`, `Creditor` and `PinInfo`objects
 
