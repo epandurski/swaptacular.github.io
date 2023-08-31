@@ -155,7 +155,7 @@ example account identity object:
 ## API object types
 
 In this section I will outline the different types of objects that exist in
-the API, and the function of each object type.
+the API, and the role of each object type.
 
 **Important note:** Many of the object types contain fields which values are
 64-bit integers. While big integers are perfectly valid JSON, the standard
@@ -164,11 +164,25 @@ serializer do not work correctly with big integers.
 
 ### `PaginatedList` objects
 
-TODO
+Quite a few of the endpoints in the API return a potentially very long list
+of items. In these cases, the "PaginatedList" object type is used:
+
+<div class="message">
+  <img src="/images/paginated-list.svg"
+       alt="Shows a paginated list of items">
+</div>
 
 ### `PaginatedStream` objects
 
-TODO
+Sometimes we have a list of items which grows continuously (a list of log
+entries, for example). In these cases, it is important to allow the client
+to immediately skip to the end of the list, and then to periodically check
+for new items. For this, the "PaginatedStream" object type is used:
+
+<div class="message">
+  <img src="/images/paginated-stream.svg"
+       alt="Shows a paginated stream of items">
+</div>
 
 ### `LogEntry` objects
 
