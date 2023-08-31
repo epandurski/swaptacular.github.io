@@ -206,7 +206,7 @@ log entry is added to the log, referring to the updated object and its new
 
 The picture above shows a `LogEntry` object, added to the log to inform
 about the successful finalization of some transfer (and the update of the
-corresponding `Transfer` object). The log entry tells the client that the
+corresponding "Transfer" object). The log entry tells the client that the
 transfer object at *"/example-transfer"* has been updated, and the new
 "version" of the object is "2". After processing this log entry, the client
 may decide to make an additional HTTP request to *"/example-transfer"*, so
@@ -238,7 +238,13 @@ device.
 `PinInfo` objects represent the user's PIN, and its current status ("on",
 "off", or "blocked").
 
-### `AccountList` and `Account` objects
+### `AccountList` objects
+
+The API maintains a list of accounts (an "AccountList" object) for every
+currency holder. The list of accounts is simply a `PaginatedList` of
+references (URIs) to all `Account` objects which the currency holder owns.
+
+### `Account` objects
 
 TODO:
 
