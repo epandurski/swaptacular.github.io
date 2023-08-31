@@ -157,7 +157,7 @@ example account identity object:
 In this section I will outline the different types of objects that exist in
 the API, and the role of each object type.
 
-**Important note:** Many of the object types contain fields which values are
+**Important note:** Many of the object types contain fields whose values are
 64-bit integers. While big integers are perfectly valid JSON, the standard
 [EcmaScript](https://en.wikipedia.org/wiki/ECMAScript) JSON parser and
 serializer do not work correctly with big integers.
@@ -165,7 +165,7 @@ serializer do not work correctly with big integers.
 ### `PaginatedList` objects
 
 Quite a few of the endpoints in the API return a potentially very long list
-of items. In these cases, the "PaginatedList" object type is used:
+of items. For these cases, the "PaginatedList" object type is used:
 
 <div class="message">
   <img src="/images/paginated-list.svg"
@@ -216,13 +216,13 @@ Quite frequently, the client will already have the latest version of the
 updated object in its local database, so that no additional HTTP request
 will be needed. In such cases, the value of log entry's *"objectUpdateId"*
 field will be smaller or equal to the value of the *"latestUpdateId"* field
-from the object in the client's local database.
+for the object in the client's local database.
 
 It is important to mention that for most types of updated objects, a "data"
 field will not be present in the corresponding log entry. However, because
 `Transfer` object updates are quite common, the provided "data" field allows
 the client to never perform an additional HTTP request (the request to
-obtain the new state of the transfer from *"/example-transfer"*), inferring
+obtain the new state of the transfer at *"/example-transfer"*), inferring
 the new state from the supplied "data". The "data" field is just a nice
 little optimization.
 
@@ -235,8 +235,8 @@ convenience reasons, the user is likely to stay logged in for long periods
 of time, during which other people may get physical access to the user's
 device.
 
-`PinInfo` objects represent the user's PIN, and its current status ("on",
-"off", or "blocked").
+`PinInfo` objects represent the user's PIN, and its status ("on", "off", or
+"blocked").
 
 ### `AccountList` objects
 
