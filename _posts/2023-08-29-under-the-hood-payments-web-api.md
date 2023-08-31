@@ -189,11 +189,10 @@ for new items. For this, the "PaginatedStream" object type is used:
 Client applications should be able to efficiently synchronize their local
 databases with the server's database, even after long disconnected periods.
 For this reason, the API keeps a log of each update to every important
-object.
+object (that is: accounts, incoming transfers, outgoing transfers etc.).
 
 The log is a `PaginatedStream` of `LogEntry` objects. The stream contains
-all historical changes to all important objects belonging to a given
-currency holder.
+all historical changes to all objects belonging to a given currency holder.
 
 Every updatable object in the API has a *"latestUpdateId"* field. Each time
 an object is updated, the object's "latestUpdateId" gets incremented, and a
@@ -224,7 +223,7 @@ field will not be present in the corresponding log entry. However, because
 `Transfer` object updates are quite common, the provided "data" field allows
 the client to never perform an additional HTTP request (the request to
 obtain the new state of the transfer from *"/example-transfer"*), inferring
-the new state from the supplied "data". The "data" field is just an nice
+the new state from the supplied "data". The "data" field is just a nice
 little optimization.
 
 ### `CreditorsList`, `Creditor` and `PinInfo`objects
