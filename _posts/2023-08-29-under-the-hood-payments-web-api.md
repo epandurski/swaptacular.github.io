@@ -338,7 +338,8 @@ incoming transfers are represented by `CommittedTransfer` objects.
 account. For example: the account identity, the interest rate on the
 account, possible configuration errors etc. The "AccountInfo" sub-object may
 also include a `DebtorInfo` object, which essentially is *a reliable link*
-to a document containing additional information about the debtor.
+to a [document containing additional information about the
+debtor](/public/docs/coin-info-documents.pdf).
 
 #### `AccountConfig` sub-objects
 
@@ -356,9 +357,10 @@ currency amounts are displayed.
 
 "AccountExchange" sub-objects allow currency holders to announce that they
 want to exchange currencies that they have, but do not need, for currencies
-that they need. To that end, the currency holder can specify a `CurrencyPeg`
-for the account, declaring a fixed exchange rate between the tokens of two
-of his/her accounts (the pegged currency, and the peg currency).
+that they need. To that end, the currency holder can associate a
+`CurrencyPeg` object with the account, declaring a fixed exchange rate
+between the tokens of two of his/her accounts (the pegged currency, and the
+peg currency).
 
 #### `AccountKnowledge` sub-objects
 
@@ -381,10 +383,33 @@ currency holder owns.
 
 ### `Transfer` objects
 
-TODO
+To initiate a transfer from one of his/her accounts, to someone else's
+account, the currency holder should create a "Transfer" object. Right after
+its creation, the transfer object is in a *pending* state, which means that
+the transfer has been initiated, and is waiting to be **finalized**. The
+finalization can be *successful* (the amount has been transferred), or
+*unsuccessful*.
 
-### Swagger UI
+Once the Transfer has been finalized, and the client application has
+informed the currency holder about the outcome, the "Transfer" object is not
+needed anymore and can be deleted. However, as a safety measure, and to
+allow other devices that the currency holder may own, to register the
+finalized transfer as well, it is recommended not to delete the created
+"Transfer" objects for at least 5 days.
 
-Check the [Creditors Agent Swagger
-  UI](https://demo.swaptacular.org/creditors-swagger-ui/) (client_id:
-  `swagger-ui`, client_secret: `swagger-ui`)
+It is worth mentioning that the API allows a *cancellation* to be attempted
+for pending transfers. The cancellation attempt may fail, in which case the
+client has no other option but to wait for the transfer to be finalized
+(successfully or unsuccessfully).
+
+## Conclusion
+
+In this post I explained the most important high-level concepts in the
+[Payments Web API Specification](/public/docs/swpt_creditors/redoc.html).
+You can use the convenient [Swagger
+UI](https://demo.swaptacular.org/creditors-swagger-ui/) (client_id:
+`swagger-ui`, client_secret: `swagger-ui`) to browse the documentation, and
+experiment with the API.
+
+In further posts, I will talk about Swaptacular's "digital coins" and
+payment requests.
