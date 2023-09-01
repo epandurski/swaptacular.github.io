@@ -383,19 +383,18 @@ currency holder owns.
 
 ### `Transfer` objects
 
-To initiate a transfer from one of his/her accounts, to someone else's
-account, the currency holder should create a "Transfer" object. Right after
-its creation, the transfer object is in a *pending* state, which means that
-the transfer has been initiated, and is waiting to be **finalized**. The
-finalization can be *successful* (the amount has been transferred), or
-*unsuccessful*.
+To initiate a transfer to someone else's account, the currency holder should
+create a "Transfer" object. Right after its creation, the transfer object is
+in a *pending* state, which means that the transfer has been initiated, and
+is waiting to be **finalized**. The finalization can be *successful* (the
+amount has been transferred), or *unsuccessful*.
 
 Once the Transfer has been finalized, and the client application has
 informed the currency holder about the outcome, the "Transfer" object is not
-needed anymore and can be deleted. However, as a safety measure, and to
+needed anymore, and can be deleted. However, as a safety measure, and to
 allow other devices that the currency holder may own, to register the
-finalized transfer as well, it is recommended not to delete the created
-"Transfer" objects for at least 5 days.
+finalized transfer as well, it is recommended not to delete the "Transfer"
+objects for at least 5 days.
 
 It is worth mentioning that the API allows a *cancellation* to be attempted
 for pending transfers. The cancellation attempt may fail, in which case the
@@ -408,8 +407,8 @@ In this post I explained the most important high-level concepts in the
 [Payments Web API Specification](/public/docs/swpt_creditors/redoc.html).
 You can use the convenient [Swagger
 UI](https://demo.swaptacular.org/creditors-swagger-ui/) (client_id:
-`swagger-ui`, client_secret: `swagger-ui`) to browse the documentation, and
-experiment with the API.
+`swagger-ui`, client_secret: `swagger-ui`) to browse the documentation, to
+and experiment with the API.
 
 In further posts, I will talk about Swaptacular's "digital coins" and
 payment requests.
