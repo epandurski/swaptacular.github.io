@@ -43,7 +43,7 @@ In essence, every creditors agent node acts as a proxy between currency
 holders and accounting authority nodes. Thus, the main purpose of the
 Payments Web API is to allow client applications to preform the same
 operations that the Swaptacular Messaging Protocol allows, but using a
-synchronous Web API, instead of an asynchronous message protocol.
+synchronous Web API, instead of an asynchronous messaging protocol.
 
 It is important to mention that PWAPI client applications are not restricted
 to simple mobile apps. A client application, for example, can be corporate
@@ -52,7 +52,7 @@ processing hundreds of automated transfers per second.
 
 Therefore, one of the main design goals for the Payments Web API is to allow
 efficient (in terms of network throughput) synchronization between the
-client's database (containing account balances, incoming and outgoing
+client's local database (containing account balances, incoming and outgoing
 transfers, etc.) and the creditors agent's database.
 
 Another important design goal is to allow several client applications (for
@@ -60,7 +60,7 @@ example, several mobile devices which the currency holder owns), to work
 simultaneously without stepping on each others toes.
 
 Lastly, pure Web apps (that is: JavaScript apps running on a standard
-browser) should be able to work with the API, do that if need be, the
+browser) should be able to work with the API, so that if need be, the
 currency holder can use someone else's computer to access his/hers accounts.
 
 ## Authentication
@@ -77,11 +77,10 @@ handle. Therefore, some form of [database
 sharding](https://en.wikipedia.org/wiki/Shard_(database_architecture)) would
 be needed.
 
-PWAPI is designed so as to allow the decision to which database shard to
+The API is designed so as to allow the decision to which database shard to
 send each incoming request, to be taken as early as possible — simply by
-looking at the request's URL. For example, to send each HTTP request to the
-correct database shard (aka "load balancing"), the reference implementation
-uses a simple [API Reverse
+looking at the request's URL. For example, to this load balancing, the
+reference implementation uses a simple [API Reverse
 Proxy](https://github.com/swaptacular/swpt_apiproxy) HTTP server.
 
 ## The "admin" endpoints
@@ -98,39 +97,40 @@ holders (aka "creditors"), and to remove existing creditors.
   creation of new creditors can optionally be done in two-phases: First, a
   creditor ID is *reserved*, and only then, the creditor is *activated*. If
   the reserved creditor ID has not been activated within some period time,
-  the reservation expires, and the creditor ID is released.
+  the reservation expires, and the reserved creditor ID is released.
 
 - **Removing existing creditors (deactivation)**
 
   Activated creditors can be *deactivated*. A deactivated creditor can not
-  perform any actions in the API, but its creditor ID remain unavailable for
-  some lengthy period of time (5 years for example).
+  perform any actions in the API, but its creditor ID remains unavailable
+  for a lengthy period of time (5 years for example).
 
 - **Obtaining the list of active creditors**
 
-  External services are also able to obtain the list of all active creditors
-  in the system. This gives external services a "starting point" to
-  synchronize their databases with the main creditor's database.
+  External services can also obtain the list of all active creditors in the
+  system. This gives external services a "starting point" to synchronize
+  their databases with the main creditor's database.
 
 ## Creditors' wallets
 
 In the API, every activated creditor receives a "wallet". The creditor's
 wallet is an object which mostly contains links to other objects belonging
 to the creditor (accounts, initiated transfers etc.). You may think of the
-wallet object as a gateway to all the other objects and operations in the
-API. The design of the `Wallet` object follows the general REST principle,
-that client application should not try to assemble
+wallet object as a gateway to all operations available in the API. The
+design of the `Wallet` object follows the general principle that client
+application should not try to assemble
 [URIs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) (links)
-themselves, but all the necessary URIs should be provided by the server.
+themselves. Instead, all the necessary URIs should be provided by the
+server.
 
 ## Debtor and account identities
 
-All Swaptacular currencies (aka debtors), and all currency holders accounts
-(aka creditors accounts) are uniquely identified by URIs. These URIs conform
-to the custom "swpt" URI scheme. The syntax for the `swpt:` URI scheme is
-[specified here](/public/docs/swpt-uri-scheme.pdf).
+All Swaptacular currencies (aka debtors), and all currency holders' accounts
+(aka creditors accounts, or simply *"accounts"*) are uniquely identified by
+URIs. These URIs conform to the custom `swpt:` URI scheme. The syntax for
+the "swpt" URI scheme is [specified here](/public/docs/swpt-uri-scheme.pdf).
 
-In the API, to create an account with a given currency, the currency holder
+In the API, to create an account with a given debtor, the currency holder
 should provide a `DebtorIdentity` object. Here is an example debtor identity
 object:
 
@@ -141,9 +141,9 @@ object:
 }
 {% endhighlight %}
 
-To initiate a transfer, the currency holder should provide the
-`AccountIdentity` object representing the recipient's account: Here is an
-example account identity object:
+Once an account has been created, to initiate a transfer, the currency
+holder should provide the `AccountIdentity` object representing the
+recipient's account: Here is an example account identity object:
 
 {% highlight json %}
 {
@@ -154,13 +154,17 @@ example account identity object:
 
 ## API object types
 
-In this section I will outline the different types of objects that exist in
-the API, and the role of each object type.
+In this section I will outline the most important types of objects in the
+API, and the functions that these objects perform.
 
-**Important note:** Many of the object types contain fields whose values are
-64-bit integers. While big integers are perfectly valid JSON, the standard
-[EcmaScript](https://en.wikipedia.org/wiki/ECMAScript) JSON parser and
-serializer do not work correctly with big integers.
+**Important note:** Some of the objects contain fields whose values are
+64-bit integers. While big integers are perfectly valid in JSON, the
+standard JavaScript [JSON
+parser](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
+and
+[serializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+do not work correctly with big integers. Therefore in this case, a more
+capable JSON parser will be needed.
 
 ### `PaginatedList` objects
 
@@ -223,26 +227,27 @@ field will not be present in the corresponding log entry. However, because
 `Transfer` object updates are quite common, the provided "data" field allows
 the client to never perform an additional HTTP request (the request to
 obtain the new state of the transfer at *"/example-transfer"*), inferring
-the new state from the supplied "data". The "data" field is just a nice
-little optimization.
+the new state from the supplied "data". The provided "data" field is just an
+optimization.
 
 ### `PinInfo`objects
 
-The API provides *the option* every potentially dangerous operation to be
-protected by a PIN (Personal Identification Number). This can be especially
-useful then the client of the API is a mobile app. In this case, for
-convenience reasons, the user is likely to stay logged in for long periods
-of time, during which other people may get physical access to the user's
-device.
+The API provides *the option* every potentially dangerous operation
+(initiating transfers for example) to be protected by a PIN (Personal
+Identification Number). This is especially useful then the client of the API
+is a mobile app. In this case, for convenience reasons, the user is likely
+to stay logged in for long periods of time, during which other people may
+get physical access to the user's device.
 
 `PinInfo` objects represent the user's PIN, and its status ("on", "off", or
-"blocked").
+"blocked"). The "blocked" status indicates that a wrong PIN has been tried
+too many times, and a new PIN must be configured.
 
 ### `AccountList` objects
 
 The API maintains a list of accounts (an "AccountList" object) for every
 currency holder. The list of accounts is simply a `PaginatedList` of
-references (URIs) to all `Account` objects which the currency holder owns.
+references (URIs) to the `Account` objects which the currency holder owns.
 
 ### `Account` objects
 
