@@ -251,16 +251,126 @@ references (URIs) to the `Account` objects which the currency holder owns.
 
 ### `Account` objects
 
-TODO:
+Creditors (aka currency holders) can create accounts with debtors (aka
+currencies). For each created account, an new `Account` object is added to
+the currency holder's list of accounts. Also, the currency holder can decide
+to schedule some of his/her accounts for deletion, or to even delete them
+right away.
 
-Explain how the different account sub-objects work.
+Every "Account" object contains several sub-objects. Each sub-object is
+responsible for a different aspect of the account's behavior. Here is an
+example "Account" object, with its sub-objects:
 
-- `AccountInfo`, `DebtorInfo`
-- `AccountConfig`
-- `AccountDisplay`
-- `AccountExchange`
-- `AccountKnowledge`
-- `AccountLedger`, `LedgerEntry`, `CommittedTransfer`
+{% highlight json %}
+{
+  "type": "Account",
+  "uri": "/creditors/1/accounts/1/",
+  "createdAt":"2023-08-06T15:00:00Z",
+  "debtor": {
+      "type": "DebtorIdentity",
+      "uri": "swpt:1234"
+  },
+  "accountsList": {
+      "uri": "/creditors/1/accounts-list"
+  },
+  "latestUpdateId": 1,
+  "latestUpdateAt": "2023-08-06T15:00:00Z",
+  "ledger": {
+    "type": "AccountLedger",
+    "uri": "/creditors/1/accounts/1/ledger",
+    ...
+    This is the `AccountLedger` sub-object.
+    ...
+  },
+  "info": {
+    "type": "AccountInfo",
+    "uri": "/creditors/1/accounts/1/info"
+    ...
+    This is the `AccountInfo` sub-object.
+    ...
+  },
+  "config": {
+    "type": "AccountConfig",
+    "uri": "/creditors/1/accounts/1/config",
+    ...
+    This is the `AccountConfig` sub-object.
+    ...
+  },
+  "display": {
+    "type": "AccountDisplay",
+    "uri": "/creditors/1/accounts/1/display"
+    ...
+    This is the `AccountDisplay` sub-object.
+    ...
+  },
+  "exchange": {
+    "type": "AccountExchange",
+    "uri": "/creditors/1/accounts/1/exchange"
+    ...
+    This is the `AccountExchange` sub-object.
+    ...
+  },
+  "knowledge": {
+    "type": "AccountKnowledge",
+    "uri": "/creditors/1/accounts/1/knowledge"
+    ...
+    This is the `AccountKnowledge` sub-object.
+    ...
+  }
+}
+{% endhighlight %}
+
+**Important note:** Every sub-object has its own URI, and can be updated
+independently from the parent `Account` object, and from the other
+sub-objects. Also, updates in the different sub-objects are tracked
+separately in the log.
+
+#### `AccountLedger` sub-objects
+
+"AccountLedger" sub-objects contain the current account balance, and a
+`PaginatedList` of `LedgerEntry` objects. Each "LedgerEntry" object
+describes an outgoing or an incoming transfer to the account. Outgoing and
+incoming transfers are represented by `CommittedTransfer` objects.
+
+#### `AccountInfo` sub-objects
+
+"AccountInfo" sub-objects contain important technical information about the
+account. For example: the account identity, the interest rate on the
+account, possible configuration errors etc. The "AccountInfo" sub-object may
+also include a `DebtorInfo` object, which essentially is *a reliable link*
+to a document containing additional information about the debtor.
+
+#### `AccountConfig` sub-objects
+
+"AccountConfig" sub-objects allow currency holders to alter various
+configuration settings on their accounts. Notably, they can schedule the
+account for deletion, and alter the account's *"negligible amount"*.
+
+#### `AccountDisplay` sub-objects
+
+"AccountDisplay" sub-objects allow currency holders to alter the display
+parameters of their currencies. Like the name of the currency, and the way
+currency amounts are displayed.
+
+#### `AccountExchange` sub-objects
+
+"AccountExchange" sub-objects allow currency holders to announce that they
+want to exchange currencies that they have, but do not need, for currencies
+that they need. To that end, the currency holder can specify a `CurrencyPeg`
+for the account, declaring a fixed exchange rate between the tokens of two
+of his/her accounts (the pegged currency, and the peg currency).
+
+#### `AccountKnowledge` sub-objects
+
+"AccountKnowledge" sub-objects allow currency holders to store all kinds of
+important data about the accounts.
+
+For example: The client application can use the account's "AccountKnowledge"
+sub-object to store the account's interest rate, which the users already
+knows about, and later, compare the stored value with the current interest
+rate on the account. This way, a change in the interest rate will be
+correctly detected, even if the user uses several different client devices
+(or applications).
 
 ### `TransfersList` and `Transfer` objects
 
