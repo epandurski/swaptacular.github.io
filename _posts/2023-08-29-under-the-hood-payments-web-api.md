@@ -372,7 +372,14 @@ rate on the account. This way, a change in the interest rate will be
 correctly detected, even if the user uses several different client devices
 (or applications).
 
-### `TransfersList` and `Transfer` objects
+### `TransfersList` objects
+
+The API maintains a list of initiated transfers (an "TransfersList" object)
+for every currency holder. The list of initiated transfers is simply a
+`PaginatedList` of references (URIs) to the `Transfer` objects which the
+currency holder owns.
+
+### `Transfer` objects
 
 TODO
 
