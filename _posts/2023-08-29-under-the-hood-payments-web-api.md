@@ -14,7 +14,7 @@ cases.
 
 In this post I will talk about the server Web API that currency holders'
 client applications use, to communicate with the [creditors agent
-nodes](/overview/) responsible for managing currency holders' accounts.
+nodes](/overview/).
 
 <!--more-->
 
@@ -119,23 +119,37 @@ holders (aka "creditors"), and to remove existing creditors.
 In the API, every activated creditor receives a "wallet". The creditor's
 wallet is an object which mostly contains links to other objects belonging
 to the creditor (accounts, initiated transfers etc.). You may think of the
-wallet object as a gateway to all operations available in the API. The
+wallet object as a gateway to all the operations available in the API. The
 design of the `Wallet` object follows the general principle that client
 application should not try to assemble
-[URIs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) (links)
+[URIs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier)
 themselves. Instead, all the necessary URIs should be provided by the
 server.
 
-## Debtor and account identities
+## API object types
+
+In this section I will try to outline the most important types of objects in
+the API, and the functions that they perform.
+
+**Important note:** Some of the objects in the API contain fields whose
+values are 64-bit integers. While big integers are perfectly valid in JSON,
+the standard JavaScript [JSON
+parser](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
+and
+[serializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+do not work correctly with big integers. Therefore in this case, a more
+capable JSON parser will be needed.
+
+### `DebtorIdentity` and `AccountIdentity` objects
 
 All Swaptacular currencies (aka debtors), and all currency holders' accounts
-(aka creditors accounts, or simply *"accounts"*) are uniquely identified by
+(aka creditors accounts, or simply *accounts*) are uniquely identified by
 URIs. These URIs conform to the custom `swpt:` URI scheme. The syntax for
 the "swpt" URI scheme is [specified here](/public/docs/swpt-uri-scheme.pdf).
 
-In the API, to create an account with a given debtor, the currency holder
-should provide a `DebtorIdentity` object. Here is an example debtor identity
-object:
+In the API, in order to create an account with a given debtor, the currency
+holder should provide a `DebtorIdentity` object. Here is an example
+"DebtorIdentity" object:
 
 {% highlight json %}
 {
@@ -146,7 +160,7 @@ object:
 
 Once an account has been created, to initiate a transfer, the currency
 holder should provide the `AccountIdentity` object representing the
-recipient's account: Here is an example account identity object:
+recipient's account: Here is an example "AccountIdentity" object:
 
 {% highlight json %}
 {
@@ -155,19 +169,8 @@ recipient's account: Here is an example account identity object:
 }
 {% endhighlight %}
 
-## API object types
-
-In this section I will outline the most important types of objects in the
-API, and the functions that they perform.
-
-**Important note:** Some of the objects in the API contain fields whose
-values are 64-bit integers. While big integers are perfectly valid in JSON,
-the standard JavaScript [JSON
-parser](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
-and
-[serializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
-do not work correctly with big integers. Therefore in this case, a more
-capable JSON parser will be needed.
+These two simple types of objects are used in quite a lot of places in the
+API.
 
 ### `PaginatedList` objects
 
