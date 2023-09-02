@@ -12,32 +12,30 @@ In [a previous post](/2023/08/28/under-the-hood-smp/) I explained how the
 Swaptacular Messaging Protocol works, demonstrating the most important use
 cases.
 
-In this post I will talk about the [server Web
-API](https://en.wikipedia.org/wiki/Web_API) that currency holders' client
-apps use, to directly communicate with the [creditors agent
-node](/overview/) which is responsible for managing their accounts.
+In this post I will talk about the server Web API that currency holders'
+client applications use, to communicate with the [creditors agent
+nodes](/overview/) responsible for managing currency holders' accounts.
 
 <!--more-->
 
-Most currency holders (aka creditors) would want to use the services of more
-than one creditors agent, and because of this, the interoperability between
-different currency holder client apps, and different creditors agent servers
-is very important. To facilitate this interoperability, Swaptacular
-recommends every creditors agent to implement the [Payments Web API
+Many currency holders (aka creditors) would need to use the services of more
+than one creditors agent nodes. For this reason, interoperability between
+different currency holder client applications, and different creditors agent
+servers is very important. To facilitate this interoperability, Swaptacular
+recommends every creditors agent node to implement the [Payments Web API
 Specification](/public/docs/swpt_creditors/redoc.html).
 
-The **Payments Web API** (PWAPI for short) is a practical [RESTful
+The **Payments Web API** which we will discuss here, is a practical [RESTful
 API](https://en.wikipedia.org/wiki/Representational_state_transfer), defined
 in the terms of the [OpenAPI](https://www.openapis.org/) specification
-language. The PWAPI specification itself, contains a lot of details and
-examples already, and therefore, here I will try to outline only the most
-important high-level concepts, which can help the reader to navigate the
-details.
+language. The API specification itself contains lots of details and examples
+already, and therefore, here I will try to outline only the most important
+high-level concepts, which can help the reader to navigate the details.
 
 **A fair warning:** This post may become too technical for the taste of some
 readers.
 
-## API design principles
+## API design goals
 
 In essence, every creditors agent node acts as a proxy between currency
 holders and accounting authority nodes. Thus, the main purpose of the
@@ -45,22 +43,27 @@ Payments Web API is to allow client applications to preform the same
 operations that the Swaptacular Messaging Protocol allows, but using a
 synchronous Web API, instead of an asynchronous messaging protocol.
 
-It is important to mention that PWAPI client applications are not restricted
-to simple mobile apps. A client application, for example, can be corporate
-accounting server, maintaining a database of customers and invoices, and
-processing hundreds of automated transfers per second.
+Another important objective is to allow currency holders to declare *simple
+currency exchange policies*. Ultimately, currency holders should be able to
+effortlessly exchange currencies that they have, but do not need, for
+currencies that they need.
+
+I should mention that the client applications which the API is intended for,
+are not limited to simple mobile apps. A client application, for example,
+could be a corporate accounting server, maintaining a huge database of
+customers and invoices, and processing hundreds of automated transfers per
+second.
 
 Therefore, one of the main design goals for the Payments Web API is to allow
-efficient (in terms of network throughput) synchronization between the
-client's local database (containing account balances, incoming and outgoing
-transfers, etc.) and the creditors agent's database.
+the efficient synchronization between the client's local database
+(containing account balances, incoming and outgoing transfers, etc.) and the
+master database, which resides on the creditors agent node.
 
 Another important design goal is to allow several client applications (for
 example, several mobile devices which the currency holder owns), to work
 simultaneously without stepping on each others toes.
 
-Lastly, pure Web apps (that is: JavaScript apps running on a standard
-browser) should be able to work with the API, so that if need be, the
+Lastly, pure Web apps should be able use the API, so that if need be, the
 currency holder can use someone else's computer to access his/hers accounts.
 
 ## Authentication
@@ -79,7 +82,7 @@ be needed.
 
 The API is designed so as to allow the decision to which database shard to
 send each incoming request, to be taken as early as possible — simply by
-looking at the request's URL. For example, to this load balancing, the
+looking at the request's URL. For example, to do load balancing, our
 reference implementation uses a simple [API Reverse
 Proxy](https://github.com/swaptacular/swpt_apiproxy) HTTP server.
 
@@ -155,11 +158,11 @@ recipient's account: Here is an example account identity object:
 ## API object types
 
 In this section I will outline the most important types of objects in the
-API, and the functions that these objects perform.
+API, and the functions that they perform.
 
-**Important note:** Some of the objects contain fields whose values are
-64-bit integers. While big integers are perfectly valid in JSON, the
-standard JavaScript [JSON
+**Important note:** Some of the objects in the API contain fields whose
+values are 64-bit integers. While big integers are perfectly valid in JSON,
+the standard JavaScript [JSON
 parser](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
 and
 [serializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
@@ -227,7 +230,9 @@ field will not be present in the corresponding log entry. However, because
 `Transfer` object updates are quite common, the provided "data" field allows
 the client to never perform an additional HTTP request (the request to
 obtain the new state of the transfer at *"/example-transfer"*), inferring
-the new state from the supplied "data". The provided "data" field is just an
+the new state from the supplied "data".
+
+All in all, when the "data" field is provided, this is only a performance
 optimization.
 
 ### `PinInfo`objects
@@ -237,7 +242,7 @@ The API provides *the option* every potentially dangerous operation
 Identification Number). This is especially useful then the client of the API
 is a mobile app. In this case, for convenience reasons, the user is likely
 to stay logged in for long periods of time, during which other people may
-get physical access to the user's device.
+accidentally get physical access to the user's device.
 
 `PinInfo` objects represent the user's PIN, and its status ("on", "off", or
 "blocked"). The "blocked" status indicates that a wrong PIN has been tried
@@ -251,11 +256,9 @@ references (URIs) to the `Account` objects which the currency holder owns.
 
 ### `Account` objects
 
-Creditors (aka currency holders) can create accounts with debtors (aka
-currencies). For each created account, an new `Account` object is added to
-the currency holder's list of accounts. Also, the currency holder can decide
-to schedule some of his/her accounts for deletion, or to even delete them
-right away.
+For each created account, an new `Account` object is added to the currency
+holder's list of accounts. Also, the currency holder can decide to schedule
+some of his/her accounts for deletion, or to even delete them right away.
 
 Every "Account" object contains several sub-objects. Each sub-object is
 responsible for a different aspect of the account's behavior. Here is an
@@ -355,24 +358,23 @@ currency amounts are displayed.
 
 #### `AccountExchange` sub-objects
 
-"AccountExchange" sub-objects allow currency holders to announce that they
-want to exchange currencies that they have, but do not need, for currencies
-that they need. To that end, the currency holder can associate a
-`CurrencyPeg` object with the account, declaring a fixed exchange rate
-between the tokens of two of his/her accounts (the pegged currency, and the
-peg currency).
+"AccountExchange" sub-objects allow currency holders to declare their
+currency exchange policies. To that end, the currency holder can declare a
+fixed exchange rate between the tokens of two of his/her accounts (the
+pegged currency, and the peg currency). To specify this relation, a
+`CurrencyPeg` object is used.
 
 #### `AccountKnowledge` sub-objects
 
-"AccountKnowledge" sub-objects allow currency holders to store all kinds of
-important data about the accounts.
+"AccountKnowledge" sub-objects allow currency holders to store all sorts of
+important data about the accounts, on the server.
 
 For example: The client application can use the account's "AccountKnowledge"
-sub-object to store the account's interest rate, which the users already
-knows about, and later, compare the stored value with the current interest
-rate on the account. This way, a change in the interest rate will be
-correctly detected, even if the user uses several different client devices
-(or applications).
+sub-object to store the account's interest rate, which the currency holder
+already knows about, and later, compare the stored value with the current
+interest rate on the account. This way, a change in the interest rate will
+be correctly detected, even when the currency holder uses several different
+client devices (or applications).
 
 ### `TransfersList` objects
 
@@ -383,18 +385,18 @@ currency holder owns.
 
 ### `Transfer` objects
 
-To initiate a transfer to someone else's account, the currency holder should
-create a "Transfer" object. Right after its creation, the transfer object is
-in a *pending* state, which means that the transfer has been initiated, and
-is waiting to be **finalized**. The finalization can be *successful* (the
-amount has been transferred), or *unsuccessful*.
+To initiate a transfer to someone else's account, the currency holder
+creates a "Transfer" object. Right after its creation, the transfer object
+is in a *pending* state, which means that the transfer has been initiated,
+and is waiting to be **finalized**. The finalization can be *successful*
+(the amount has been successfully transferred), or *unsuccessful*.
 
-Once the Transfer has been finalized, and the client application has
+Once the transfer has been finalized, and the client application has
 informed the currency holder about the outcome, the "Transfer" object is not
 needed anymore, and can be deleted. However, as a safety measure, and to
-allow other devices that the currency holder may own, to register the
-finalized transfer as well, it is recommended not to delete the "Transfer"
-objects for at least 5 days.
+allow the finalized transfer to show up on other devices that the currency
+holder may use, it is recommended not to delete the "Transfer" objects for
+at least 5 days.
 
 It is worth mentioning that the API allows a *cancellation* to be attempted
 for pending transfers. The cancellation attempt may fail, in which case the
