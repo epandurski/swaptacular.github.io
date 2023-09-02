@@ -5,7 +5,6 @@ description: >
   Explains the basics of Swaptacular's Payments Web API.
 author: Evgeni Pandurski
 tags: [under-the-hood]
-published: false
 ---
 
 In [a previous post](/2023/08/28/under-the-hood-smp/) I explained how the
@@ -13,7 +12,7 @@ Swaptacular Messaging Protocol works, demonstrating the most important use
 cases.
 
 In this post I will talk about the server Web API that currency holders'
-client applications use, to communicate with the [creditors agent
+client applications use to communicate with the [creditors agent
 nodes](/overview/).
 
 <!--more-->
