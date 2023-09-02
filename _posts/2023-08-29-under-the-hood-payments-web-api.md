@@ -118,15 +118,15 @@ holders (aka "creditors"), and to remove existing creditors.
 
 In the API, every activated creditor receives a "wallet". The creditor's
 wallet is an object which mostly contains links to other objects belonging
-to the creditor (accounts, initiated transfers etc.). You may think of the
-wallet object as a gateway to all the operations available in the API. The
-design of the `Wallet` object follows the general principle that client
+to the creditor (like accounts, initiated transfers etc.). You may think of
+the wallet object as a gateway to all the operations available in the API.
+The design of the `Wallet` object follows the general principle that client
 application should not try to assemble
 [URIs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier)
 themselves. Instead, all the necessary URIs should be provided by the
 server.
 
-## API object types
+## Other important object types
 
 In this section I will try to outline the most important types of objects in
 the API, and the functions that they perform.
@@ -331,7 +331,7 @@ example "Account" object, with its sub-objects:
 from the parent `Account` object, and from the other sub-objects. Also,
 updates in the different sub-objects are tracked separately in the log.
 
-I will try to explain briefly what each type of sub-objects does:
+I will try to explain briefly what each account sub-object does:
 
 #### `AccountLedger` sub-objects
 
