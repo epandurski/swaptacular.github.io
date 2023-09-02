@@ -12,13 +12,13 @@ Swaptacular Messaging Protocol works, demonstrating the most important use
 cases.
 
 In this post I will talk about the server Web API that currency holders'
-client applications use to communicate with the [creditors agent
+client applications use to communicate with [creditors agent
 nodes](/overview/).
 
 <!--more-->
 
 Many currency holders (aka creditors) would need to use the services of more
-than one creditors agent nodes. For this reason, interoperability between
+than one creditors agent node. For this reason, interoperability between
 different currency holder client applications, and different creditors agent
 servers is very important. To facilitate this interoperability, Swaptacular
 recommends every creditors agent node to implement the [Payments Web API
@@ -37,7 +37,7 @@ readers.
 ## API design goals
 
 In essence, every creditors agent node acts as a proxy between currency
-holders and accounting authority nodes. Thus, the main purpose of the
+holders and *accounting authority nodes*. Thus, the main purpose of the
 Payments Web API is to allow client applications to preform the same
 operations that the Swaptacular Messaging Protocol allows, but using a
 synchronous Web API, instead of an asynchronous messaging protocol.
@@ -48,15 +48,15 @@ effortlessly exchange currencies that they have, but do not need, for
 currencies that they need.
 
 I should mention that the client applications which the API is intended for,
-are not limited to simple mobile apps. A client application, for example,
+are not limited to simple mobile apps. The client application, for example,
 could be a corporate accounting server, maintaining a huge database of
 customers and invoices, and processing hundreds of automated transfers per
 second.
 
 Therefore, one of the main design goals for the Payments Web API is to allow
-the efficient synchronization between the client's local database
-(containing account balances, incoming and outgoing transfers, etc.) and the
-master database, which resides on the creditors agent node.
+efficient synchronization between the client's local database (containing
+account balances, incoming and outgoing transfers, etc.) and the master
+database, which resides on the creditors agent node.
 
 Another important design goal is to allow several client applications (for
 example, several mobile devices which the currency holder owns), to work
