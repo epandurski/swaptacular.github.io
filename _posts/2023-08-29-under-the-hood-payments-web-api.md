@@ -131,9 +131,9 @@ server.
 In this section I will try to outline the most important types of objects in
 the API, and the functions that they perform.
 
-**Important note:** Some of the objects in the API contain fields whose
-values are 64-bit integers. While big integers are perfectly valid in JSON,
-the standard JavaScript [JSON
+**Note:** Some of the objects in the API contain fields whose values are
+64-bit integers. While big integers are perfectly valid in JSON, the
+standard JavaScript [JSON
 parser](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
 and
 [serializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
@@ -175,7 +175,8 @@ API.
 ### `PaginatedList` objects
 
 Quite a few of the endpoints in the API return a potentially very long list
-of items. For these cases, the "PaginatedList" object type is used:
+of items. For these cases, the "PaginatedList" object type is used. Here is
+how this works:
 
 <div class="message">
   <img src="/images/paginated-list.svg"
@@ -326,10 +327,11 @@ example "Account" object, with its sub-objects:
 }
 {% endhighlight %}
 
-**Important note:** Every sub-object has its own URI, and can be updated
-independently from the parent `Account` object, and from the other
-sub-objects. Also, updates in the different sub-objects are tracked
-separately in the log.
+**Note:** Every sub-object has its own URI, and can be updated independently
+from the parent `Account` object, and from the other sub-objects. Also,
+updates in the different sub-objects are tracked separately in the log.
+
+I will try to explain briefly what each type of sub-objects does:
 
 #### `AccountLedger` sub-objects
 
