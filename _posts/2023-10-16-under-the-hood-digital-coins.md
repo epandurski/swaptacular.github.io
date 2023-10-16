@@ -146,7 +146,8 @@ important information, from a potentially untrustworthy source.
 
 Every Swaptacular currency has an unique *digital coin*, represented by a QR
 code. The issuer of each currency can publish its digital coin on his/her
-website, advertisements, business cards etc. Friends can share digital coins
-with each other, thus expunging the use of their favorite currencies.
+website, advertisements, business cards etc. Friends and business partners
+can share digital coins with each other, thus expunging the use of their
+favorite currencies.
 
 In a further post, I will talk about payment requests.
