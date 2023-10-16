@@ -104,12 +104,13 @@ specifications which deal with this topic:
           "revision": 1
         }
 
-  describes a currency named "Example Currency", which is pegged to the US
-  dollar with 1-to-1 exchange ratio (all URIs and debtor IDs are made-up).
+  describes a currency named "Example Currency", which is
+  [pegged](/2022/07/03/what-is-a-currency-peg/) to the US dollar with 1-to-1
+  exchange ratio (all URIs and debtor IDs are made-up).
 
   Note that the document that describes a given currency will most likely be
-  hosted on a server operated by the [Debtors Agent](/overview/) which is
-  responsible for managing the currency. A limited number of well-known
+  hosted on a server operated by the [debtors agent node](/overview/) which
+  is responsible for managing the currency. A limited number of well-known
   currencies (like the USD), will have well-known debtor IDs, and their
   descriptions will be immutable and hosted on well-known locations.
 
@@ -137,3 +138,12 @@ unauthenticated email messages. Instead, the recommenced way of sharing
 digital coins is to scan their QR codes directly from paper, or from a
 computer screen. This gives a physical context to the act of receiving very
 important information, from a potentially untrustworthy source.
+
+## Conclusion
+
+Every Swaptacular currency has an unique *digital coin* (a QR code). The
+issuer of each currency can publish its digital coin on his/her website,
+advertisements, business cards etc. Friends can share digital coins with
+each other, thus expunging the use of their favorite currencies.
+
+In a further post, I will talk about payment requests.
