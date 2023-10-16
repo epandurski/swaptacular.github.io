@@ -45,9 +45,12 @@ specifications which deal with this topic:
   This specification defines all the nitty-gritty details of how digital
   coins work in Swaptacular.
 
-  For example, the digital coin `https://example.com/foo#swpt:1234` tells
-  that the document that describes the `swpt:1234` currency, can be found at
-  URL `https://example.com/foo`.
+  For example, the digital coin:
+
+  > `https://example.com/foo#swpt:1234`
+
+  tells that the document that describes the `swpt:1234` currency, can be
+  found at the URL `https://example.com/foo`.
 
   Note that any information received via a random `https://` connection can
   not be considered 100% trustworthy for financial applications. Therefore,
@@ -141,9 +144,9 @@ important information, from a potentially untrustworthy source.
 
 ## Conclusion
 
-Every Swaptacular currency has an unique *digital coin* (a QR code). The
-issuer of each currency can publish its digital coin on his/her website,
-advertisements, business cards etc. Friends can share digital coins with
-each other, thus expunging the use of their favorite currencies.
+Every Swaptacular currency has an unique *digital coin*, represented by a QR
+code. The issuer of each currency can publish its digital coin on his/her
+website, advertisements, business cards etc. Friends can share digital coins
+with each other, thus expunging the use of their favorite currencies.
 
 In a further post, I will talk about payment requests.
