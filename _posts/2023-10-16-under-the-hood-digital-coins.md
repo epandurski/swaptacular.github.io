@@ -105,11 +105,11 @@ specifications which deal with this topic:
         }
 
   describes a currency named "Example Currency", which is pegged to the US
-  dollar with 1-to-1 exchange ratio (the URIs and debtor IDs are made-up).
+  dollar with 1-to-1 exchange ratio (all URIs and debtor IDs are made-up).
 
   Note that the document that describes a given currency will most likely be
-  hosted on a server operated by the [debtors agent node](/overview/) which
-  is responsible for managing the currency. A limited number of well-known
+  hosted on a server operated by the [Debtors Agent](/overview/) which is
+  responsible for managing the currency. A limited number of well-known
   currencies (like the USD), will have well-known debtor IDs, and their
   descriptions will be immutable and hosted on well-known locations.
 
@@ -119,14 +119,13 @@ Because Swaptacular's digital coins really are just URLs, and therefore can
 be easily copied, they are more similar to **photographs of physical
 coins**, than to the physical coins themselves: Having a photograph of a
 physical coin does not make you an owner of a coin, but allows you to
-recognize this kind of coins when somebody wants to pay you with them.
+recognize this kind of coins whenever somebody wants to pay you with them.
 
 To make the "photograph" metaphor complete, Swaptacular's digital coins will
-most often will presented as [QR
-codes](https://en.wikipedia.org/wiki/QR_code). Once you have scanned the
-digital coin (the QR code) of a given currency with your phone, you can
-create an account with that currency, and you can accept and make payments
-in it.
+most often be presented as [QR
+codes](https://en.wikipedia.org/wiki/QR_code). Once you have scanned the QR
+code for a given currency with your phone, you can create new accounts with
+that currency, and you can accept and make payments in it.
 
 Note however, that when a stranger introduces you to a new digital coin, the
 dangers are similar to the dangers when a stranger introduces you to an
