@@ -12,7 +12,7 @@ In [a previous post](/2023/09/02/under-the-hood-payments-web-api/) I
 outlined how Swaptacular's Payments Web API works. In this post, I will talk
 about Swaptacular's *digital coins*.
 
-Every Swaptaclar currency is uniquely identified by its *debtor ID* (a
+Every Swaptacular currency is uniquely identified by its *debtor ID* (a
 64-bit integer number). In principal, the only thing that you need to know
 in order to create an account with a given currency, is the currency's
 debtor ID. In practice however, before you decide to create an account, you
@@ -27,8 +27,8 @@ way to obtain basic information about Swaptaclar currencies.
 ## Digital coins
 
 A "digital coin" is a special kind of link, that points to a document which
-describes a particular Swaptacular currency. There are three specifications
-which deal with this topic:
+describes a particular Swaptacular currency. There are 3 important
+specifications which deal with this topic:
 
 - [The "swpt" URI Scheme](/public/docs/swpt-uri-scheme.pdf)
 
@@ -42,18 +42,21 @@ which deal with this topic:
 
 - [Digital Coins in Swaptacular](/public/docs/digital-coin-urls.pdf)
 
-  This specification defines all the nitty-gritty details of how exactly
-  digital coins work in Swaptacular.
+  This specification defines all the nitty-gritty details of how digital
+  coins work in Swaptacular.
 
   For example, the digital coin `https://example.com/foo#swpt:1234` tells
   that the document that describes the `swpt:1234` currency, can be found at
   URL `https://example.com/foo`.
 
-  Note that the information obtained from the URL can not be considered 100%
-  trustworthy, and should be verified prior to receiving payments to newly
-  created accounts. By including the debtor ID directly in the digital coin
-  ("1234" in the example above), the verification can be performed
-  automatically, without requiring any actions from the user.
+  Note that any information received via a random `https://` connection can
+  not be considered 100% trustworthy for financial applications. Therefore,
+  the obtained information must always be verified prior to receiving
+  payments to a newly created account.
+
+  By explicitly including the debtor ID in the digital coin (notice the
+  `#swpt:1234` thing at the end), the obtained information can be verified
+  automatically, without requiring any further actions from the user.
 
 - [CoinInfo JSON Documents](/public/docs/coin-info-documents.pdf)
 
@@ -104,12 +107,34 @@ which deal with this topic:
   describes a currency named "Example Currency", which is pegged to the US
   dollar with 1-to-1 exchange ratio (the URIs and debtor IDs are made-up).
 
-  Note the document that describes a given currency will most likely be
-  hosted on servers operated by the [debtors agent node](/overview/) which
+  Note that the document that describes a given currency will most likely be
+  hosted on a server operated by the [debtors agent node](/overview/) which
   is responsible for managing the currency. A limited number of well-known
   currencies (like the USD), will have well-known debtor IDs, and their
   descriptions will be immutable and hosted on well-known locations.
 
-## Distributing digital coins
+## Sharing digital coins
 
-TODO
+Because Swaptacular's digital coins really are just URLs, and therefore can
+be easily copied, they are more similar to **photographs of physical
+coins**, than to the physical coins themselves: Having a photograph of a
+physical coin does not make you an owner of a coin, but allows you to
+recognize this kind of coins when somebody wants to pay you with them.
+
+To make the "photograph" metaphor complete, Swaptacular's digital coins will
+most often will presented as [QR
+codes](https://en.wikipedia.org/wiki/QR_code). Once you have scanned the
+digital coin (the QR code) of a given currency with your phone, you can
+create an account with that currency, and you can accept and make payments
+in it.
+
+Note however, that when a stranger introduces you to a new digital coin, the
+dangers are similar to the dangers when a stranger introduces you to an
+unknown foreign currency: You could be tricked by fraudsters, and be paid
+with worthless coins.
+
+For this reason, it is generally a bad idea to share digital coins via
+unauthenticated email messages. Instead, the recommenced way of sharing
+digital coins is to scan their QR codes directly from paper, or from a
+computer screen. This gives a physical context to the act of receiving very
+important information, from a potentially untrustworthy source.
