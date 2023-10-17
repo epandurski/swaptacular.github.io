@@ -21,16 +21,20 @@ currency, the currency unit, the exchange rate with other currencies, etc.
 
 <!--more-->
 
-To solve this inconvenience, Swaptacular defines a reliable *decentralized*
-way to obtain basic information about Swaptaclar currencies.
+Because Swaptacular's network tries to be as decentralized as possible, we
+can not entrust a centralized authority to provide essential information
+about every Swaptacular currency. To solve this problem, we need a standard
+**decentralized way** of providing basic information about Swaptaclar
+currencies.
 
 ## Digital coins
 
-A "digital coin" is a special kind of link, that points to a document which
+A "digital coin" is a specific kind of
+[URL](https://en.wikipedia.org/wiki/URL), that points to a document which
 describes a particular Swaptacular currency. There are **3 important
 specifications** which deal with this topic:
 
-- [The "swpt" URI Scheme](/public/docs/swpt-uri-scheme.pdf)
+- ["swpt" URI scheme for Swaptacular](/public/docs/swpt-uri-scheme.pdf)
 
   This specification defines how Swaptacular currencies and Swaptacular
   accounts can be represented by [Uniform Resource Identifiers
@@ -111,8 +115,8 @@ specifications** which deal with this topic:
   [pegged](/2022/07/03/what-is-a-currency-peg/) to the US dollar with 1-to-1
   exchange ratio (the URIs are made-up).
 
-  The document that describes a given currency will most likely be hosted on
-  a server operated by the [debtors agent node](/overview/) which is
+  Most likely, the document that describes a given currency will be hosted
+  on a server operated by the [debtors agent node](/overview/) which is
   responsible for managing the currency.
 
   A limited number of well-known currencies (like the USD), will have
@@ -149,11 +153,11 @@ important information, from a potentially untrustworthy source.
 ## Dummy accounts
 
 Sometimes when you scan a digital coin, your [creditors agent](/overview/)
-will not have a connection to the [accounting authority](/overview) that
-manages the currency. In this case, you will not be able to receive or make
-payments in this currency, but thanks to the information obtained from the
-document that describes the currency, you still can create a *dummy account*
-with the currency.
+will not have an established connection to the [accounting
+authority](/overview) that manages the currency. In this case, you will not
+be able to receive or make payments in this currency, but thanks to the
+information obtained from the document that describes the currency, you
+still can create a *dummy account* with the currency.
 
 Dummy accounts can be useful as value-references to which other currencies
 are pegged.
@@ -163,8 +167,8 @@ are pegged.
 Some Swaptacular currencies will be used only to represent a physical value
 measurement unit (like ounces of gold, US dollar bills etc.). Those *dummy
 debtors* do not represent a person or an organization, do not owe anything
-to anyone, and are used solely as identifiers of value measurement units.
-Accounts with dummy debtors are always dummy accounts.
+to anyone, and are used solely as identifiers of **value measurement
+units**. Accounts with dummy debtors are always dummy accounts.
 
 In practice, most Swaptacular currencies will be pegged to national
 currencies, which are dummy debtor currencies (no pun intended). All debtor
