@@ -5,7 +5,6 @@ description: >
   Explains how Swaptacular's digital coins work.
 author: Evgeni Pandurski
 tags: [under-the-hood]
-published: false
 ---
 
 In [a previous post](/2023/09/02/under-the-hood-payments-web-api/) I
@@ -62,7 +61,7 @@ specifications** which deal with this topic:
   to a newly created account.
 
   By explicitly including the debtor ID in the digital coin (notice the
-  `#swpt:9876543210` thing at the end), the obtained information can be
+  `#swpt:9876543210` fragment at the end), the obtained information can be
   verified automatically, without requiring further actions from the user.
 
 - [CoinInfo JSON Documents](/public/docs/coin-info-documents.pdf)
@@ -115,7 +114,7 @@ specifications** which deal with this topic:
   [pegged](/2022/07/03/what-is-a-currency-peg/) to the US dollar with 1-to-1
   exchange ratio (the URIs are made-up).
 
-  Most likely, the document that describes a given currency will be hosted
+  In practice, the document that describes a given currency will be hosted
   on a server operated by the [debtors agent node](/overview/) which is
   responsible for managing the currency.
 
