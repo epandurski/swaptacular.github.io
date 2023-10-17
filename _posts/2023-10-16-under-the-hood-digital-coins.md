@@ -159,8 +159,8 @@ be able to receive or make payments in this currency, but thanks to the
 information obtained from the document that describes the currency, you
 still can create a *dummy account* with the currency.
 
-Dummy accounts can be useful as value-references to which other currencies
-are pegged.
+Dummy accounts can be useful as value-references to which other accounts are
+pegged.
 
 ## Dummy debtors
 
@@ -177,10 +177,14 @@ debtor currencies.
 
 ## Conclusion
 
-Every Swaptacular currency has an unique *digital coin*, represented by a QR
-code. The issuer of each currency can publish its digital coin on his/her
-website, advertisements, business cards etc. Friends and business partners
-can share digital coins with each other, thus expunging the use of their
-favorite currencies.
+- Swaptaclar's digital coins are a decentralized way of providing basic
+  information about Swaptaclar currencies.
+
+- Every Swaptacular currency has an unique digital coin, represented by a QR
+  code. The issuer of each currency (the debtor) can publish its digital
+  coin on his/her website, advertisements, business cards etc.
+
+- Friends and business partners can share digital coins with each other,
+  thus expunging the use the currencies that are most useful to them.
 
 In the next post I will talk about Swaptacular payment requests.
