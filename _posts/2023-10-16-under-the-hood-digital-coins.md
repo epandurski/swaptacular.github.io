@@ -27,8 +27,8 @@ way to obtain basic information about Swaptaclar currencies.
 ## Digital coins
 
 A "digital coin" is a special kind of link, that points to a document which
-describes a particular Swaptacular currency. There are 3 important
-specifications which deal with this topic:
+describes a particular Swaptacular currency. There are **3 important
+specifications** which deal with this topic:
 
 - [The "swpt" URI Scheme](/public/docs/swpt-uri-scheme.pdf)
 
@@ -36,9 +36,9 @@ specifications which deal with this topic:
   accounts can be represented by [Uniform Resource Identifiers
   ](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) (URI).
   
-  For example, the URI `swpt:1234` represents the Swaptacular currency with
-  debtor ID 1234; and the URI `swpt:1234/example-account` represents some
-  random account with that currency.
+  For example, the URI `swpt:9876543210` represents the Swaptacular currency
+  with debtor ID 9876543210; and the URI `swpt:9876543210/my-account`
+  represents some random account with that currency.
 
 - [Digital Coins in Swaptacular](/public/docs/digital-coin-urls.pdf)
 
@@ -47,19 +47,19 @@ specifications which deal with this topic:
 
   For example, the digital coin:
 
-  > `https://example.com/foo#swpt:1234`
+  > `https://example.com/foo#swpt:9876543210`
 
-  tells that the document that describes the `swpt:1234` currency, can be
-  found at the URL `https://example.com/foo`.
+  informs us that the document that describes the `swpt:9876543210`
+  currency, can be found at the URL `https://example.com/foo`.
 
-  Note that any information received via a random `https://` connection can
-  not be considered 100% trustworthy for financial applications. Therefore,
-  the obtained information must always be verified prior to receiving
-  payments to a newly created account.
+  Note that information received via a random `https://` connection can not
+  be considered 100% trustworthy for financial applications. Therefore, the
+  obtained information must always be verified prior to receiving payments
+  to a newly created account.
 
   By explicitly including the debtor ID in the digital coin (notice the
-  `#swpt:1234` thing at the end), the obtained information can be verified
-  automatically, without requiring any further actions from the user.
+  `#swpt:9876543210` thing at the end), the obtained information can be
+  verified automatically, without requiring further actions from the user.
 
 - [CoinInfo JSON Documents](/public/docs/coin-info-documents.pdf)
 
@@ -99,7 +99,7 @@ specifications which deal with this topic:
           },
           "debtorIdentity": {
             "type": "DebtorIdentity",
-            "uri": "swpt:1234"
+            "uri": "swpt:9876543210"
           },
           "latestDebtorInfo": {
             "uri": "https://example.com/foo"
@@ -109,13 +109,15 @@ specifications which deal with this topic:
 
   describes a currency named "Example Currency", which is
   [pegged](/2022/07/03/what-is-a-currency-peg/) to the US dollar with 1-to-1
-  exchange ratio (all URIs and debtor IDs are made-up).
+  exchange ratio (the URIs are made-up).
 
-  Note that the document that describes a given currency will most likely be
-  hosted on a server operated by the [debtors agent node](/overview/) which
-  is responsible for managing the currency. A limited number of well-known
-  currencies (like the USD), will have well-known debtor IDs, and their
-  descriptions will be immutable and hosted on well-known locations.
+  The document that describes a given currency will most likely be hosted on
+  a server operated by the [debtors agent node](/overview/) which is
+  responsible for managing the currency.
+
+  A limited number of well-known currencies (like the USD), will have
+  well-known debtor IDs, and their descriptions will be immutable and
+  accessible at well-known locations.
 
 ## Sharing digital coins
 
@@ -124,12 +126,14 @@ be easily copied, they are more similar to **photographs of physical
 coins**, than to the physical coins themselves: Having a photograph of a
 physical coin does not make you an owner of a coin, but allows you to
 recognize this kind of coins whenever somebody wants to pay you with them.
-
 To make the "photograph" metaphor complete, Swaptacular's digital coins will
 most often be presented as [QR
-codes](https://en.wikipedia.org/wiki/QR_code). Once you have scanned the QR
-code for a given currency with your phone, you can create new accounts with
-that currency, and you can accept and make payments in it.
+codes](https://en.wikipedia.org/wiki/QR_code).
+
+It works like this: When you want to create an account with a given
+currency, you scan the digital coin of this currency (a QR code) with your
+phone. You review the currency's description, and confirm that you want a
+new account. Then you can receive and make payments in this currency.
 
 Note however, that when a stranger introduces you to a new digital coin, the
 dangers are similar to the dangers when a stranger introduces you to an
@@ -142,6 +146,31 @@ digital coins is to scan their QR codes directly from paper, or from a
 computer screen. This gives a physical context to the act of receiving very
 important information, from a potentially untrustworthy source.
 
+## Dummy accounts
+
+Sometimes when you scan a digital coin, your [creditors agent](/overview/)
+will not have a connection to the [accounting authority](/overview) that
+manages the currency. In this case, you will not be able to receive or make
+payments in this currency, but thanks to the information obtained from the
+document that describes the currency, you still can create a *dummy account*
+with the currency.
+
+Dummy accounts can be useful as value-references to which other currencies
+are pegged.
+
+## Dummy debtors
+
+Some Swaptacular currencies will be used only to represent a physical value
+measurement unit (like ounces of gold, US dollar bills etc.). Those *dummy
+debtors* do not represent a person or an organization, do not owe anything
+to anyone, and are used solely as identifiers of value measurement units.
+Accounts with dummy debtors are always dummy accounts.
+
+In practice, most Swaptacular currencies will be pegged to national
+currencies, which are dummy debtor currencies (no pun intended). All debtor
+IDs in the range from 0 to 4294967295 are reserved for well-known dummy
+debtor currencies.
+
 ## Conclusion
 
 Every Swaptacular currency has an unique *digital coin*, represented by a QR
@@ -150,4 +179,4 @@ website, advertisements, business cards etc. Friends and business partners
 can share digital coins with each other, thus expunging the use of their
 favorite currencies.
 
-In a further post, I will talk about payment requests.
+In the next post I will talk about Swaptacular payment requests.
