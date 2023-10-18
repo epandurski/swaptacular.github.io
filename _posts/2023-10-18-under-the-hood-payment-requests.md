@@ -33,16 +33,16 @@ denominator".
 
 ## Payment requests in Swaptacular
 
-- [Payment Requests and Transfers in
+- The general framework: [Payment Requests and Transfers in
   Swaptacular](/public/docs/payment-requests.pdf)
+- Payment requests can be exchanged as files, or as QR codes
 - Generic payment requests
 - Payee reference, transfer note, and transfer note formats
 
 ## The "PR-zero" file format
 
 - [PR-zero Payment Request Documents](/public/docs/pr0-documents.pdf)
-- Other may be standardized in the future
-- Payment request files and QR codes
+- Other formats may be standardized in the future
 
 ## Conclusions
 
