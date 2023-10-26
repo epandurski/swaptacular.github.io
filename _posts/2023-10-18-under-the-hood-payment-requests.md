@@ -26,10 +26,8 @@ random-looking symbols, which is very hard to memorize or enter from the
 keyboard. Therefore, there must be a standard way for the payer and the
 payee to exchange this information conveniently.
 
-To solve these and other related problems, an extendable set of
-specifications must be in place, so that conforming client applications can
-work together seamlessly, and yet, not be limited to the "lowest common
-denominator".
+To solve these and other related problems, a set of specifications is in
+place, so that conforming client applications can work together seamlessly.
 
 ## Payment requests in Swaptacular
 
@@ -53,7 +51,7 @@ transfers. In summary, there are several important things to note:
    note**. The transfer note may contain any information that the sender
    wants the recipient of the transfer to see.
 
-4. The payee reference should be included in the transfer note.
+4. The *payee reference* should be included in the *transfer note*.
 
 5. Transfer notes can be in different **transfer note formats**. If need be,
    new standard formats can be added to the existing ones. For *canonical
@@ -70,10 +68,18 @@ transfers. In summary, there are several important things to note:
 
 ## The "PR-zero" file format
 
-- Payment requests can be exchanged as files, or as QR codes
-- [PR-zero Payment Request Documents](/public/docs/pr0-documents.pdf)
-- Other formats may be standardized in the future
+We saw in the previous section, that Swaptacular's payment requests are just
+"normal" files, and as such, they can be sent to the payer via countless
+number of channels. However, it is also very important to be able to send
+payment requests as [QR codes](https://en.wikipedia.org/wiki/QR_code).
+
+The ["PR-zero Payment Request Documents"](/public/docs/pr0-documents.pdf)
+specification defines a compact file format which is well suited for QR
+codes.
 
 ## Conclusions
 
-TODO
+In order to allow different client applications to process *payment
+requests* seamlessly, and yet, not be limited to the "lowest common
+denominator", Swaptacular gives a minimal but extendable set of
+specifications.
