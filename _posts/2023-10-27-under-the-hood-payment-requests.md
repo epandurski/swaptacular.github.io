@@ -5,7 +5,6 @@ description: >
   Explains how Swaptacular's payment requests work.
 author: Evgeni Pandurski
 tags: [under-the-hood]
-published: false
 ---
 
 In [a previous post](/2023/10/16/under-the-hood-digital-coins/) I explained
