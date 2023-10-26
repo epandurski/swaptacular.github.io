@@ -28,19 +28,49 @@ payee to exchange this information conveniently.
 
 To solve these and other related problems, an extendable set of
 specifications must be in place, so that conforming client applications can
-work together seamlessly, and yet, not be limited by the "lowest common
+work together seamlessly, and yet, not be limited to the "lowest common
 denominator".
 
 ## Payment requests in Swaptacular
 
-- The general framework: [Payment Requests and Transfers in
-  Swaptacular](/public/docs/payment-requests.pdf)
-- Payment requests can be exchanged as files, or as QR codes
-- Generic payment requests
-- Payee reference, transfer note, and transfer note formats
+> In the general sense, a request for payment refers to any communication
+> sent out to customers asking for them to pay for goods and services.
+
+The ["Payment Requests and Transfers in
+Swaptacular"](/public/docs/payment-requests.pdf) specification defines what
+exactly payment requests in Swaptacular are, and how they work together with
+transfers. In summary, there are several important things to note:
+
+1. Payment requests can use different file formats. If need be, new standard
+   formats can be added to the existing ones.
+
+2. The payment request may contain a **payee reference**. A payee reference
+   is a relatively short sequence of characters (an invoice number for
+   example), that the payer should include alongside the payment to help the
+   payee identify it.
+
+3. Every Swaptacular transfer (and thus every payment) has a **transfer
+   note**. The transfer note may contain any information that the sender
+   wants the recipient of the transfer to see.
+
+4. The payee reference should be included in the transfer note.
+
+5. Transfer notes can be in different **transfer note formats**. If need be,
+   new standard formats can be added to the existing ones. For *canonical
+   formats* however, the first line of the transfer note always contains the
+   payee reference.
+
+6. Normally, payment requests do specify the requested amount. Payment
+   requests which do not specify a requested amount, or the specified
+   requested amount is zero, are called **generic payment requests**.
+
+7. Generic payment requests can be used to solicit recurring transfers. A
+   generic payment requests basically says: "Here is my account, you can
+   send me money anytime you want".
 
 ## The "PR-zero" file format
 
+- Payment requests can be exchanged as files, or as QR codes
 - [PR-zero Payment Request Documents](/public/docs/pr0-documents.pdf)
 - Other formats may be standardized in the future
 
