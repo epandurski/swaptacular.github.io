@@ -126,6 +126,8 @@ and
 ## Remaining work
 
 - [ ] Implement circular currency exchanges.
+- [ ] Establish a registry for accounting authorities and well-known
+      currencies.
 
 
 <div>
