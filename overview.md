@@ -9,9 +9,9 @@ become an issuer of a digital currency. Swaptacular tries to make
 creating and issuing new digital currencies possible for everyone. The
 Swaptacular project consists of three things:
 
-1. The network architecture
-2. A set of interoperability protocols
-3. Reference implementations for the interoperability protocols
+1. The network architecture.
+2. A set of interoperability protocols.
+3. Reference implementations for the interoperability protocols.
 
 
 ## The network architecture
@@ -21,13 +21,14 @@ In Swaptacular's network architecture, there are five types of nodes:
 1. **Accounting Authorities** manage user account balances. They form
    the backbone of the network.
 2. **Currency Issuers** create currencies and issue money into
-   existence. In Swaptacular, they are also called "debtors".
+   existence. In Swaptacular, they are also called *debtors*.
 3. **Debtors Agents** are proxies that connect currency issuers to
-   accounting authorities.
-4. **Currency Holders** can make and receive payments. In Swaptacular,
-   they are also called "creditors".
+   accounting authorities. They *may* also act as guarantors to debtors.
+4. **Currency Holders** can make and receive payments. In Swaptacular, they
+   are also called *creditors*.
 5. **Creditors Agents** are proxies that connect currency holders to
-   accounting authorities.
+   accounting authorities. They *may* also facilitate currency exchanges
+   between creditors.
 
 <div class="message">
   <img src="/images/swpt_basic_network.svg" alt="Swaptacular Basic Network">
@@ -70,10 +71,9 @@ In order to allow currency holders to use a client application of
 their choice, Swaptacular recommends creditors agents to follow the 
 [Payments Web API Specification](/public/docs/swpt_creditors/redoc.html).
 
-Since interchangeability of client applications for currency issuing
-is not of critical importance, Swaptacular does not make
-recommendations about the *Issuing Web API*. (The current reference
-implementation uses a [Simple Issuing Web
+Since interchangeability of client applications for currency issuing is not
+of critical importance, Swaptacular does not make recommendations about the
+*Issuing Web API*. (The reference implementation uses [Simple Issuing Web
 API](/public/docs/swpt_debtors/redoc.html).)
 
 Swaptacular takes the interoperability between different
@@ -125,13 +125,6 @@ and
 
 ## Remaining work
 
-- [x] Implement a user friendly UI for currency issuing.
-- [x] Implement a user friendly UI for making and receiving payments.
-- [x] Define and implement a standard serialization for the messaging
-  protocol.
-- [x] Allow creditors/debtors agents to easily connect to multiple
-  accounting authorities, using user friendly UI and/or configuration
-  files.
 - [ ] Implement circular currency exchanges.
 
 
