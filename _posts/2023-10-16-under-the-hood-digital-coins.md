@@ -183,7 +183,8 @@ debtor currencies.
   code. The issuer of each currency (the debtor) can publish its digital
   coin on his/her website, advertisements, business cards etc.
 
-- Friends and business partners can share digital coins with each other,
-  thus expunging the use the currencies that are most useful to them.
+- Friends and business partners can share digital coins with each
+  other, thus expanding the use of the currencies that are most useful
+  to them.
 
 In the next post I will talk about Swaptacular payment requests.
