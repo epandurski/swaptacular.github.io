@@ -6,8 +6,8 @@ title: Overview
 Digital currencies are all around us. Nowadays, it is relatively easy
 to become a holder of a digital currency, but it is not at all easy to
 become an issuer of a digital currency. Swaptacular tries to make
-creating and issuing new digital currencies possible for everyone. The
-Swaptacular project consists of three things:
+creating and issuing new digital currencies practical for everyone.
+The Swaptacular project consists of three things:
 
 1. The network architecture.
 2. A set of interoperability protocols.
