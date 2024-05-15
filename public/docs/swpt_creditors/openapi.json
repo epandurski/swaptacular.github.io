@@ -1789,13 +1789,12 @@
             "description": "The type of this object. Will always be present in the responses from the server.",
             "example": "TransferOptions"
           },
-          "minInterestRate": {
-            "type": "number",
-            "default": -100.0,
-            "minimum": -100.0,
-            "format": "float",
-            "description": "The minimal approved interest rate. If the interest rate on the account becomes lower than this value, the transfer will not be successful. This can be useful when the transferred amount may need to be decreased if the interest rate on the account has decreased.",
-            "example": -100.0
+          "finalInterestRateTimestamp": {
+            "type": "string",
+            "format": "date-time",
+            "default": "9999-12-31T23:59:59+00:00",
+            "description": "When the transferred amount would need to be changed if the interest rate on the account had been changed unexpectedly by the server, this field specifies the onset moment of the account's current interest rate, from the client's perspective. The default value is appropriate for normal transfers.",
+            "example": "9999-12-31T23:59:59+00:00"
           },
           "deadline": {
             "type": "string",
@@ -1896,7 +1895,7 @@
           "errorCode": {
             "type": "string",
             "readOnly": true,
-            "description": "The error code.\n\n* `\"CANCELED_BY_THE_SENDER\"` signifies that the transfer has been   canceled by the sender.\n* `\"SENDER_DOES_NOT_EXIST\"` signifies that the sender's account   does not exist.\n* `\"RECIPIENT_IS_UNREACHABLE\"` signifies that the recipient's  account does not exist, or does not accept incoming transfers.\n* `\"TRANSFER_NOTE_IS_TOO_LONG\"` signifies that the transfer has been   rejected because the byte-length of the transfer note is too big.\n* `\"INSUFFICIENT_AVAILABLE_AMOUNT\"` signifies that the transfer   has been rejected due to insufficient amount available on the   sender's account.\n* `\"TIMEOUT\"` signifies that the transfer has been terminated due to expired deadline.\n* `\"TOO_LOW_INTEREST_RATE\"` signifies that the transfer has been terminated because the current interest rate on the account is smaller than the minimal approved interest rate.\n",
+            "description": "The error code.\n\n* `\"CANCELED_BY_THE_SENDER\"` signifies that the transfer has been   canceled by the sender.\n* `\"SENDER_DOES_NOT_EXIST\"` signifies that the sender's account   does not exist.\n* `\"RECIPIENT_IS_UNREACHABLE\"` signifies that the recipient's  account does not exist, or does not accept incoming transfers.\n* `\"TRANSFER_NOTE_IS_TOO_LONG\"` signifies that the transfer has been   rejected because the byte-length of the transfer note is too big.\n* `\"INSUFFICIENT_AVAILABLE_AMOUNT\"` signifies that the transfer   has been rejected due to insufficient amount available on the   sender's account.\n* `\"TIMEOUT\"` signifies that the transfer has been terminated due to expired deadline.\n* `\"NEWER_INTEREST_RATE\"` signifies that the transfer has been terminated because the current interest rate on the account is more recent than the specified final interest rate timestamp.\n",
             "example": "INSUFFICIENT_AVAILABLE_AMOUNT"
           },
           "totalLockedAmount": {
