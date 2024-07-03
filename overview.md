@@ -27,8 +27,9 @@ In Swaptacular's network architecture, there are five types of nodes:
 4. **Currency Holders** can make and receive payments. In Swaptacular, they
    are also called *creditors*.
 5. **Creditors Agents** are proxies that connect currency holders to
-   accounting authorities. They *may* also facilitate currency exchanges
-   between creditors.
+   accounting authorities. They *may* also facilitate [automated
+   currency exchanges between
+   creditors](https://github.com/swaptacular/swpt_trade).
 
 <div class="message">
   <img src="/images/swpt_basic_network.svg" alt="Swaptacular Basic Network">
@@ -101,6 +102,7 @@ and concise specifications for every important aspect of the system:
 * [Accounting Authority](https://github.com/swaptacular/swpt_accounts)
 * [Debtors Agent](https://github.com/swaptacular/swpt_debtors)
 * [Creditors Agent](https://github.com/swaptacular/swpt_creditors)
+* [Circular Trade](https://github.com/swaptacular/swpt_trade)
 * [Service that manages OAuth2 login and consent](https://github.com/swaptacular/swpt_login)
 * [Currency Issuer UI](https://github.com/swaptacular/swpt_debtors_ui)
 * [Currency Holder UI](https://github.com/swaptacular/swpt_creditors_ui)
@@ -125,7 +127,6 @@ and
 
 ## Remaining work
 
-- [ ] Implement circular currency exchanges.
 - [ ] Establish a registry for accounting authorities and well-known
       currencies.
 
