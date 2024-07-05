@@ -16,7 +16,7 @@ gazillion of currencies, without using a "master" reserve currency.
 
 For quite some time, the [My wallet app]({{
 site.app_demo.creditors_webapp}}) allowed users to set an exchange
-policy for each currency in their wallet, so that the creditors agent
+policy for every currency in their wallet, so that the creditors agent
 could arrange mutually beneficial currency exchanges between users:
 
 <!--more-->
@@ -40,13 +40,13 @@ Swaptacular, and non-Swaptacular currencies, forming a "tree" of
 currency pegs.
 
 Thus, the exchange rates between most Swaptacular currencies are
-known, fixed, and **explicitly approved by the currency holders**. In
-Swaptacular, the creditors agent knows:
+known, fixed, and **explicitly approved by currency holders**.
+Therefore, the creditors agent knows:
 
 1. The fixed price of each currency. (This price is set by the issuer
    of the currency.)
-2. How much of which currency each user is willing to sell.
-3. How much of which currency each user is willing to buy.
+2. How much of each currency, each user is willing to sell.
+3. How much of each currency, each user is willing to buy.
 
 Having all this information makes our job much easier, compared to
 traditional currency exchanges, where matching seller and buyer prices
@@ -66,7 +66,7 @@ generalizations:
 
 1. "Trading circles" are found automatically, using a relatively
    simple algorithm. The number of participants in each trading circle
-   can be huge.
+   can be huge (must be at least two).
 
 3. We can clear debts incurred not in one, but in many different
    currencies.
@@ -89,14 +89,14 @@ design, beneficial for all of the participants.
 
 We know that the *creditors agent*'s job is to maintain the
 infrastructure of servers which enables currency holders (aka
-creditors) to trade and make payments in gazillion of different
-currencies. It is only fair that there should be some reward for this.
+creditors) to trade, and make payments in gazillion of different
+currencies. It is only fair that there should be some reward for this!
 
 For every circular trade that the creditors agent arranges, a small
 portion of the traded amounts will be retained as a reward. Thus, as
 time passes, the creditors agent will end up holding some amounts of a
 huge number of different currencies. Fortunately, the creditors agent
 can use its own "automated currency exchanges" services, to trade the
-currencies that it does not need, for currencies that it does. This
-process has not been automated yet, but I have plans to completely
-automate it in the future.
+currencies that it does not need, for currencies that it does need.
+This process has not been automated yet, but I have plans to automate
+it in the future.
