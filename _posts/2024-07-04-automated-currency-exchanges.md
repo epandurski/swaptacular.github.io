@@ -29,7 +29,8 @@ could arrange mutually beneficial currency exchanges between users:
 </div>
 
 But until very recently, this functionality was missing, and all
-exchange policies set by users were ignored. Not anymore.
+exchange policies set by users were ignored. [Not
+anymore](https://github.com/swaptacular/swpt_trade).
 
 ## How does it work?
 
@@ -87,4 +88,17 @@ design, beneficial for all of the participants.
 
 ## What's in it for the creditors agent?
 
-TODO
+We know that the creditors agent's job is to maintains the
+infrastructure of servers which enables currency holders (aka
+creditors) to trade and make payments in gazillion of currencies. It
+is only fair that there should be a reward for this.
+
+For each circular trade that the creditors agent arranges, as a reward
+for performing a mutually beneficial transaction, a small portion of
+the transferred amounts will be retained. Thus, as time passes, the
+creditors agent will end up holding some amounts of a huge number of
+currencies. Fortunately, the creditors agent can use its own
+"automated currency exchanges" services, to trade the currencies that
+it does not need, for currencies that it does. This process has not
+been completely automated yet, but we have plans to automate it in the
+future.
