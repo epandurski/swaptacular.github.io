@@ -12,7 +12,7 @@ published: false
 I am happy to announce that after months of hard work, I have
 successfully implemented a service that [creditors agents](/overview/)
 can install and run, which can perform automatic exchanges between
-gazillion of currencies, without needing a "master" reserve currency.
+gazillion of currencies, without using a "master" reserve currency.
 
 For quite some time, the [My wallet app]({{
 site.app_demo.creditors_webapp}}) allowed users to set an exchange
@@ -43,15 +43,15 @@ Thus, the exchange rates between most Swaptacular currencies are
 known, fixed, and **explicitly approved by the currency holders**. In
 Swaptacular, the creditors agent knows:
 
-1. The fixed price of each currency. (The price is set by the issuer of the
-   currency.)
-2. How much of which currency, each user is willing to sell.
-3. How much of which currency, each user is willing to buy.
+1. The fixed price of each currency. (This price is set by the issuer
+   of the currency.)
+2. How much of which currency each user is willing to sell.
+3. How much of which currency each user is willing to buy.
 
-Having all this information makes the problem much easier compared to
-traditional currency exchanges, where matching sellers and buyers
-prices is a major issue. In our case, we should simply look for [a
-possible circular trade](/public/docs/cmb-general.pdf):
+Having all this information makes our job much easier, compared to
+traditional currency exchanges, where matching seller and buyer prices
+is a major issue. In our case, we should simply look for [a possible
+circular trade](/public/docs/cmb-general.pdf):
 
 <div class="message" id="peg-tree">
   <img src="/images/circular-trade.png"
@@ -61,8 +61,8 @@ possible circular trade](/public/docs/cmb-general.pdf):
 
 If the picture above reminds you of the proverbial penny, which goes
 from hand to hand, in a circle, paying troublesome old debts &mdash;
-you are spot on. Here the idea is exactly the same, but there are
-several important generalizations:
+you are spot on. Here the idea is the same, but with several important
+generalizations:
 
 1. "Trading circles" are found automatically, using a relatively
    simple algorithm. The number of participants in each trading circle
@@ -74,11 +74,10 @@ several important generalizations:
 4. In addition to paying old debts, each trading circle can also
    create new debts.
 
-   This point is much more important than you might think. In
-   Swaptacular, creating new debt and issuing new money in circulation
-   is actually the same thing. Also, paying old debts is the same as
-   taking money out of circulation. Therefore, **we need to constantly
-   do both**.
+   Note that this point is very important: In Swaptacular, creating
+   new debt and issuing new money in circulation is actually the same
+   thing. Also, paying old debts is the same as taking money out of
+   circulation. Therefore, **we need to constantly do both**.
 
 The crux of the matter here is that circular trades are *always*
 arranged according to the exchange polices set by the currency
@@ -88,17 +87,16 @@ design, beneficial for all of the participants.
 
 ## What's in it for the creditors agent?
 
-We know that the creditors agent's job is to maintains the
+We know that the *creditors agent*'s job is to maintain the
 infrastructure of servers which enables currency holders (aka
-creditors) to trade and make payments in gazillion of currencies. It
-is only fair that there should be a reward for this.
+creditors) to trade and make payments in gazillion of different
+currencies. It is only fair that there should be some reward for this.
 
-For each circular trade that the creditors agent arranges, as a reward
-for performing a mutually beneficial transaction, a small portion of
-the transferred amounts will be retained. Thus, as time passes, the
-creditors agent will end up holding some amounts of a huge number of
-currencies. Fortunately, the creditors agent can use its own
-"automated currency exchanges" services, to trade the currencies that
-it does not need, for currencies that it does. This process has not
-been completely automated yet, but we have plans to automate it in the
-future.
+For every circular trade that the creditors agent arranges, a small
+portion of the traded amounts will be retained as a reward. Thus, as
+time passes, the creditors agent will end up holding some amounts of a
+huge number of different currencies. Fortunately, the creditors agent
+can use its own "automated currency exchanges" services, to trade the
+currencies that it does not need, for currencies that it does. This
+process has not been automated yet, but I have plans to completely
+automate it in the future.
