@@ -65,8 +65,8 @@ you are spot on. Here the idea is the same, but with several important
 generalizations:
 
 1. "Trading circles" are found automatically, using a relatively
-   simple algorithm. The number of participants in each trading circle
-   can be huge (must be at least two).
+   simple algorithm. The number of participants in a trading circle
+   can be very big, but can also be as small as 2.
 
 3. We can clear debts incurred not in one, but in many different
    currencies.
