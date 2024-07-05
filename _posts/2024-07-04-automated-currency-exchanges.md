@@ -6,7 +6,6 @@ description: >
   in Swaptacular.
 author: Evgeni Pandurski
 tags: [intro]
-published: false
 ---
 
 I am happy to announce that after months of hard work, I have
@@ -14,10 +13,11 @@ successfully implemented a service that [creditors agents](/overview/)
 can install and run, which can perform automatic exchanges between
 gazillion of currencies, without using a "master" reserve currency.
 
-For quite some time, the [My wallet app]({{
-site.app_demo.creditors_webapp}}) allowed users to set an exchange
-policy for every currency in their wallet, so that the creditors agent
-could arrange mutually beneficial currency exchanges between users:
+For quite some time now, the [My wallet app]({{
+site.app_demo.creditors_webapp}}) has allowed users to set exchange
+policies for the currencies in their wallets, so that the creditors
+agent could arrange mutually beneficial currency exchanges between
+users:
 
 <!--more-->
 
@@ -28,8 +28,8 @@ could arrange mutually beneficial currency exchanges between users:
        >
 </div>
 
-But until very recently, this functionality was missing, and all
-exchange policies set by users were ignored. [Not
+But until very recently, this functionality has been missing on the
+backend, and all exchange policies set by users were ignored. [Not
 anymore](https://github.com/swaptacular/swpt_trade).
 
 ## How does it work?
@@ -48,10 +48,11 @@ Therefore, the creditors agent knows:
 2. How much of each currency, each user is willing to sell.
 3. How much of each currency, each user is willing to buy.
 
-Having all this information makes our job much easier, compared to
-traditional currency exchanges, where matching seller and buyer prices
-is a major issue. In our case, we should simply look for [a possible
-circular trade](/public/docs/cmb-general.pdf):
+Having all this information makes the job of the creditors agent much
+easier, compared to traditional currency exchanges, where matching
+sellers' and buyers' prices is a major problem. In our case, we simply
+should look for possible [circular
+trades](/public/docs/cmb-general.pdf):
 
 <div class="message" id="peg-tree">
   <img src="/images/circular-trade.png"
@@ -64,14 +65,14 @@ from hand to hand, in a circle, paying troublesome old debts &mdash;
 you are spot on. Here the idea is the same, but with several important
 generalizations:
 
-1. "Trading circles" are found automatically, using a relatively
-   simple algorithm. The number of participants in a trading circle
+1. The *circular trades* are found automatically, using a relatively
+   simple algorithm. The number of participants in each circular trade
    can be very big, but can also be as small as 2.
 
-3. We can clear debts incurred not in one, but in many different
+3. We can clear debts accumulated not in one, but in many different
    currencies.
 
-4. In addition to paying old debts, each trading circle can also
+4. In addition to paying old debts, each circular trade can also
    create new debts.
 
    Note that this point is very important: In Swaptacular, creating
