@@ -18,10 +18,127 @@ of some readers.
 
 <!--more-->
 
-That is: accounting authority, creditors agent, debtors agent.
+## Preparing your system
+
+Because all of the services that we will run here are packaged as
+[docker images](https://www.geeksforgeeks.org/what-is-docker-images/),
+chances are that you will be able to run them on Linux, Windows, or
+Mac. However, the examples given bellow will presume that you are
+using Linux. (Because I use Linux 😀)
+
+You need to install two things on your system:
+
+1. [Docker Engine](https://docs.docker.com/engine/)
+2. [Docker Compose](https://docs.docker.com/compose/)
+
+It should be relatively easy to find detailed instructions how to
+install those on most operating systems.
+
+## Cloning the Git repositories
+
+We will run 3 different Swaptacular nodes simultaneously:
+
+1. an *accounting authority* node,
+2. a *creditors agent* node,
+3. a *debtors agent* node.
+
+The source code for each one of these nodes resides in a separate
+[Git](https://git-scm.com/) repository. You need to clone each of
+those 3 repositories separately:
 
 {% highlight shell_session %}
+$ git clone https://github.com/swaptacular/swpt_accounts.git
+Cloning into 'swpt_accounts'...
+
+$ git clone https://github.com/swaptacular/swpt_creditors.git
+Cloning into 'swpt_creditors'...
+
+$ git clone https://github.com/swaptacular/swpt_debtors.git
+Cloning into 'swpt_debtors'...
+
 $ ls
-$ clear
-$ reboot
+swpt_accounts  swpt_creditors  swpt_debtors
 {% endhighlight %}
+
+## Starting the nodes
+
+Open a new terminal for the **accounting authority** node, and in it,
+run the following commands:
+
+{% highlight shell_session %}
+$ cd swpt_accounts/
+$ cp development.env .env
+$ docker-compose -f docker-compose-all.yml up --build
+Creating network with the default driver
+Building accounts-server
+...
+{% endhighlight %}
+
+Then, open another new terminal for the **creditors agent** node, and
+in it, run the following commands:
+
+{% highlight shell_session %}
+$ cd swpt_creditors/
+$ cp development.env .env
+$ docker-compose -f docker-compose-all.yml up --build
+Creating network with the default driver
+Building accounts-server
+...
+{% endhighlight %}
+
+
+Finally, open a third terminal for the **debtors agent** node, and in
+it, run the following commands:
+
+{% highlight shell_session %}
+$ cd swpt_debtors/
+$ cp development.env .env
+$ docker-compose -f docker-compose-all.yml up --build
+Creating network with the default driver
+Building accounts-server
+...
+{% endhighlight %}
+
+In each of those 3 terminals, a new docker image will be built from
+source, and then a bunch of docker containers will be started, running
+the image, along with a bunch of other docker images downloaded from
+Internet.
+
+Do not be alarmed by the large amount of spewed log messages. A lot of
+things need to happen before everything is configured and ready to go.
+In particular, you will probably see a lot of `Connection refused`
+error messages. This happens because every node is trying to connect
+to its peer nodes, which will fail until all peer nodes are up and
+running. Also, you may periodically see `missed heartbeats from
+client, timeout: 60s` error messages from the
+[RabbitMQ](https://www.rabbitmq.com/) server. This is perfectly
+normal.
+
+## Testing everything together
+
+Before you begin experimenting with your local Swaptacular nodes, you
+need to add the line: `127.0.0.1 host.docker.internal` to the hosts
+file on your machine. On Linux, you can do this by executing the
+following command:
+
+{% highlight shell_session %}
+$ sudo sh -c 'echo "127.0.0.1 host.docker.internal" >> /etc/hosts'
+{% endhighlight %}
+
+After you have done this, you can use the following links:
+
+* [Debtors agent's "My Currency"
+  app](https://host.docker.internal:44302/debtors-webapp/) — to create
+  a new currency.
+
+* [Debtors agent's fake mail server](http://localhost:8026/) — You
+  will need this in order to read the email messages which the debtors
+  agent sends to you during user registration and login.
+
+* [Creditors agent's "My Wallet"
+  app](https://localhost:44301/creditors-webapp/) — to hold already
+  existing currencies, trade them, and make payments with them.
+
+* [Creditors agent's fake mail server](http://localhost:8025/) — You
+  will need this in order to read the email messages which the
+  creditors agent sends to you during user registration and login.
