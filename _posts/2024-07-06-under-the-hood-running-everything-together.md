@@ -18,7 +18,7 @@ of some readers.
 
 <!--more-->
 
-## Preparing your system
+## Preparing your machine
 
 Because all of the services that we will run here are packaged as
 [docker images](https://www.geeksforgeeks.org/what-is-docker-images/),
@@ -26,7 +26,7 @@ chances are that you will be able to run them on Linux, Windows, or
 Mac. However, the examples given bellow are for Linux. (Because I use
 Linux 😀)
 
-You need to install two things on your system:
+You need to install two things on your machine:
 
 1. [Docker Engine](https://docs.docker.com/engine/)
 2. [Docker Compose](https://docs.docker.com/compose/)
