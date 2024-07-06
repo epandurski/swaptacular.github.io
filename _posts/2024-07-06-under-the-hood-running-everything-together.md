@@ -31,12 +31,12 @@ You need to install two things on your system:
 1. [Docker Engine](https://docs.docker.com/engine/)
 2. [Docker Compose](https://docs.docker.com/compose/)
 
-It should be relatively easy to find detailed instructions how to
+It should be relatively easy to find detailed instructions on how to
 install those on most operating systems.
 
 ## Cloning the Git repositories
 
-We will run 3 different Swaptacular nodes simultaneously:
+We want to run 3 different Swaptacular nodes simultaneously:
 
 1. an *accounting authority* node,
 2. a *creditors agent* node,
@@ -74,15 +74,15 @@ Building accounts-server
 ...
 {% endhighlight %}
 
-Then, open another new terminal for the **creditors agent** node, and
-in it, run the following commands:
+Then, open another terminal for the **creditors agent** node, and in
+it, run the following commands:
 
 {% highlight shell_session %}
 $ cd swpt_creditors/
 $ cp development.env .env
 $ docker-compose -f docker-compose-all.yml up --build
 Creating network with the default driver
-Building accounts-server
+Building creditors-server
 ...
 {% endhighlight %}
 
@@ -95,7 +95,7 @@ $ cd swpt_debtors/
 $ cp development.env .env
 $ docker-compose -f docker-compose-all.yml up --build
 Creating network with the default driver
-Building accounts-server
+Building debtors-server
 ...
 {% endhighlight %}
 
@@ -113,16 +113,15 @@ In particular, you will probably see a lot of `Connection refused`
 error messages. This happens because every node is trying to connect
 to its peer nodes, which will continue to fail until all peer nodes
 are up and running. Also, you may periodically see `missed heartbeats
-from client, timeout: 60s` error messages from the
+from client, timeout` error messages from the
 [RabbitMQ](https://www.rabbitmq.com/) server. This is perfectly
 normal.
 
 ## Testing everything together
 
-Before you can begin experimenting with your new setup, you need to
-add the line: `127.0.0.1 host.docker.internal` to the hosts file on
-your machine. On Linux, you can do this by executing the following
-command:
+Before you begin experimenting with the new setup, you need to add the
+line: `127.0.0.1 host.docker.internal` to the hosts file on your
+machine. On Linux, you can do this by executing the following command:
 
 {% highlight shell_session %}
 $ sudo sh -c 'echo "127.0.0.1 host.docker.internal" >> /etc/hosts'
@@ -130,7 +129,7 @@ $ sudo sh -c 'echo "127.0.0.1 host.docker.internal" >> /etc/hosts'
 
 After you have done this, you can use the following links:
 
-### [Debtors agent's "My Currency" app](https://host.docker.internal:44302/debtors-webapp/)
+### [Debtors agent's "My Currency" webapp](https://host.docker.internal:44302/debtors-webapp/)
 
 Use this to create new currencies.
 
@@ -139,13 +138,13 @@ Use this to create new currencies.
 You will need this in order to read the email messages which the
 *debtors agent* sends to you during user registration and login.
 
-### [Creditors agent's "My Wallet" app](https://localhost:44301/creditors-webapp/)
+### [Creditors agent's "My Wallet" webapp](https://localhost:44301/creditors-webapp/)
 
 Use this to hold already created currencies, trade them, and make
 payments with them. By default, the creditors agent is configured to
-run [currency exchange
+run [automated currency exchange
 sessions](/2024/07/04/automated-currency-exchanges/) every 10 minutes.
-This should be quite convenient for testing.
+This should be convenient for testing.
 
 ### [Creditors agent's fake mail server](http://localhost:8025/)
 
@@ -154,7 +153,7 @@ You will need this in order to read the email messages which the
 
 ## Conclusion
 
-In this post I explained how everybody can easily run the full set of
+In this post I explained how one could easily run the full set of
 Swaptacular network nodes (that is: accounting authority, creditors
 agent, and debtors agent nodes) on a single computer, for testing and
 evaluation purposes.
