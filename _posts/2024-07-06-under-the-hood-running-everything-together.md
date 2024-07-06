@@ -116,9 +116,10 @@ normal.
 
 ## Testing everything together
 
-Before you begin experimenting with your new setup, you need to add
-the line: `127.0.0.1 host.docker.internal` to the hosts file on your
-machine. On Linux, you can do this by executing the following command:
+Before you can begin experimenting with your new setup, you need to
+add the line: `127.0.0.1 host.docker.internal` to the hosts file on
+your machine. On Linux, you can do this by executing the following
+command:
 
 {% highlight shell_session %}
 $ sudo sh -c 'echo "127.0.0.1 host.docker.internal" >> /etc/hosts'
@@ -126,18 +127,21 @@ $ sudo sh -c 'echo "127.0.0.1 host.docker.internal" >> /etc/hosts'
 
 After you have done this, you can use the following links:
 
-* [Debtors agent's "My Currency"
-  app](https://host.docker.internal:44302/debtors-webapp/) — to create
-  a new currency.
+### [Debtors agent's "My Currency" app](https://host.docker.internal:44302/debtors-webapp/)
 
-* [Debtors agent's fake mail server](http://localhost:8026/) — You
-  will need this in order to read the email messages which the debtors
-  agent sends to you during user registration and login.
+Use this to create a new currency.
 
-* [Creditors agent's "My Wallet"
-  app](https://localhost:44301/creditors-webapp/) — to hold already
-  existing currencies, trade them, and make payments with them.
+### [Debtors agent's fake mail server](http://localhost:8026/)
 
-* [Creditors agent's fake mail server](http://localhost:8025/) — You
-  will need this in order to read the email messages which the
-  creditors agent sends to you during user registration and login.
+You will need this in order to read the email messages which the
+*debtors agent* sends to you during user registration and login.
+
+### [Creditors agent's "My Wallet" app](https://localhost:44301/creditors-webapp/)
+
+Use this to hold already existing currencies, trade them, and make
+payments with them.
+
+### [Creditors agent's fake mail server](http://localhost:8025/)
+
+You will need this in order to read the email messages which the
+*creditors agent* sends to you during user registration and login.
