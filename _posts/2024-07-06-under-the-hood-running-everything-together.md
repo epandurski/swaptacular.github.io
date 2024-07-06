@@ -10,7 +10,7 @@ published: false
 
 In [the previous post](/2023/10/27/under-the-hood-payment-requests/)
 of the "Under the hood" series, I explained how payment requests work.
-In this post, I will show how you can install and run a full set of
+In this post, I will show how you can install and run the full set of
 Swaptacular [network nodes](/overview/) on your laptop.
 
 **A fair warning:** This post may become too technical for the taste
@@ -101,14 +101,14 @@ Building debtors-server
 
 In each of those 3 terminals, a new docker image will be built from
 source, and then a bunch of docker containers will be started, running
-the image, along with a bunch of other docker images downloaded from
+the image, along with a bunch of other docker images, downloaded from
 Internet.
 
 **Note:** You can press `Ctrl-C` in the terminal, to stop all running
 containers.
 
 Do not be alarmed by the large amount of spewed log messages. A lot of
-things need to happen before everything is configured and ready to go.
+things need to happen before everything is configured and ready to go!
 In particular, you will probably see a lot of `Connection refused`
 error messages. This happens because every node is trying to connect
 to its peer nodes, which will continue to fail until all peer nodes
@@ -133,7 +133,7 @@ After you have done this, you can use the following links:
 
 Use this to create new currencies.
 
-### [Debtors agent's fake mail server](http://localhost:8026/)
+### [Debtors agent's fake email server](http://localhost:8026/)
 
 You will need this in order to read the email messages which the
 *debtors agent* sends to you during user registration and login.
@@ -146,7 +146,7 @@ run [automated currency exchange
 sessions](/2024/07/04/automated-currency-exchanges/) every 10 minutes.
 This should be convenient for testing.
 
-### [Creditors agent's fake mail server](http://localhost:8025/)
+### [Creditors agent's fake email server](http://localhost:8025/)
 
 You will need this in order to read the email messages which the
 *creditors agent* sends to you during user registration and login.
