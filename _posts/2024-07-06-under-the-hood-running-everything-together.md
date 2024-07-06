@@ -11,7 +11,7 @@ published: false
 In [the previous post](/2023/10/27/under-the-hood-payment-requests/)
 of the "Under the hood" series, I explained how payment requests work.
 In this post, I will show how you can install and run the full set of
-Swaptacular [network nodes](/overview/) on your laptop.
+[Swaptacular network nodes](/overview/) on your laptop.
 
 **A fair warning:** This post may become too technical for the taste
 of some readers.
