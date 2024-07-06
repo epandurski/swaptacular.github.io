@@ -104,6 +104,9 @@ source, and then a bunch of docker containers will be started, running
 the image, along with a bunch of other docker images downloaded from
 Internet.
 
+**Note:** You can press `Ctrl-C` in the terminal, to stop all running
+containers.
+
 Do not be alarmed by the large amount of spewed log messages. A lot of
 things need to happen before everything is configured and ready to go.
 In particular, you will probably see a lot of `Connection refused`
@@ -129,7 +132,7 @@ After you have done this, you can use the following links:
 
 ### [Debtors agent's "My Currency" app](https://host.docker.internal:44302/debtors-webapp/)
 
-Use this to create a new currency.
+Use this to create new currencies.
 
 ### [Debtors agent's fake mail server](http://localhost:8026/)
 
@@ -138,8 +141,11 @@ You will need this in order to read the email messages which the
 
 ### [Creditors agent's "My Wallet" app](https://localhost:44301/creditors-webapp/)
 
-Use this to hold already existing currencies, trade them, and make
-payments with them.
+Use this to hold already created currencies, trade them, and make
+payments with them. By default, the creditors agent is configured to
+run [currency exchange
+turns](/2024/07/04/automated-currency-exchanges/) every 10 minutes.
+This is very convenient for testing.
 
 ### [Creditors agent's fake mail server](http://localhost:8025/)
 
