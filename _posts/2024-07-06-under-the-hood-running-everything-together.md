@@ -23,8 +23,8 @@ of some readers.
 Because all of the services that we will run here are packaged as
 [docker images](https://www.geeksforgeeks.org/what-is-docker-images/),
 chances are that you will be able to run them on Linux, Windows, or
-Mac. However, the examples given bellow will presume that you are
-using Linux. (Because I use Linux 😀)
+Mac. However, the examples given bellow are for Linux. (Because I use
+Linux 😀)
 
 You need to install two things on your system:
 
@@ -108,18 +108,17 @@ Do not be alarmed by the large amount of spewed log messages. A lot of
 things need to happen before everything is configured and ready to go.
 In particular, you will probably see a lot of `Connection refused`
 error messages. This happens because every node is trying to connect
-to its peer nodes, which will fail until all peer nodes are up and
-running. Also, you may periodically see `missed heartbeats from
-client, timeout: 60s` error messages from the
+to its peer nodes, which will continue to fail until all peer nodes
+are up and running. Also, you may periodically see `missed heartbeats
+from client, timeout: 60s` error messages from the
 [RabbitMQ](https://www.rabbitmq.com/) server. This is perfectly
 normal.
 
 ## Testing everything together
 
-Before you begin experimenting with your local Swaptacular nodes, you
-need to add the line: `127.0.0.1 host.docker.internal` to the hosts
-file on your machine. On Linux, you can do this by executing the
-following command:
+Before you begin experimenting with your new setup, you need to add
+the line: `127.0.0.1 host.docker.internal` to the hosts file on your
+machine. On Linux, you can do this by executing the following command:
 
 {% highlight shell_session %}
 $ sudo sh -c 'echo "127.0.0.1 host.docker.internal" >> /etc/hosts'
