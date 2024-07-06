@@ -144,10 +144,17 @@ You will need this in order to read the email messages which the
 Use this to hold already created currencies, trade them, and make
 payments with them. By default, the creditors agent is configured to
 run [currency exchange
-turns](/2024/07/04/automated-currency-exchanges/) every 10 minutes.
-This is very convenient for testing.
+sessions](/2024/07/04/automated-currency-exchanges/) every 10 minutes.
+This should be quite convenient for testing.
 
 ### [Creditors agent's fake mail server](http://localhost:8025/)
 
 You will need this in order to read the email messages which the
 *creditors agent* sends to you during user registration and login.
+
+## Conclusion
+
+In this post I explained how everybody can easily run the full set of
+Swaptacular network nodes (that is: accounting authority, creditors
+agent, and debtors agent nodes) on a single computer, for testing and
+evaluation purposes.
