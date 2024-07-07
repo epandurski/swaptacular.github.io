@@ -23,8 +23,9 @@ of some readers.
 Because all of the services that we will run here are packaged as
 [docker images](https://www.geeksforgeeks.org/what-is-docker-images/),
 chances are that you will be able to run them on Linux, Windows, or
-Mac. However, the examples given bellow are for Linux. (Because I use
-Linux 😀)
+Mac (currently we have only ARM64-images). However, the instructions
+given bellow are for Linux, because I use Linux, and this is the most
+popular platform for deployment of servers.
 
 You need to install two things on your machine:
 
@@ -32,7 +33,7 @@ You need to install two things on your machine:
 2. [Docker Compose](https://docs.docker.com/compose/)
 
 It should be relatively easy to find detailed instructions on how to
-install those on most operating systems.
+install those for most operating systems.
 
 ## Cloning the Git repositories
 
@@ -63,7 +64,7 @@ swpt_accounts  swpt_creditors  swpt_debtors
 ## Starting the nodes
 
 Open a new terminal for the **accounting authority** node, and in it,
-run the following commands:
+execute the following commands:
 
 {% highlight shell_session %}
 $ cd swpt_accounts/
@@ -75,7 +76,7 @@ Building accounts-server
 {% endhighlight %}
 
 Then, open another terminal for the **creditors agent** node, and in
-it, run the following commands:
+it, execute the commands:
 
 {% highlight shell_session %}
 $ cd swpt_creditors/
@@ -88,7 +89,7 @@ Building creditors-server
 
 
 Finally, open a third terminal for the **debtors agent** node, and in
-it, run the following commands:
+it, execute:
 
 {% highlight shell_session %}
 $ cd swpt_debtors/
@@ -120,8 +121,12 @@ normal.
 ## Testing everything together
 
 Before you begin experimenting with the new setup, you need to add the
-line: `127.0.0.1 host.docker.internal` to the hosts file on your
-machine. On Linux, you can do this by executing the following command:
+line:
+
+> 127.0.0.1 host.docker.internal
+
+to the hosts file on your machine. On Linux, you can do this by
+executing the following command:
 
 {% highlight shell_session %}
 $ sudo sh -c 'echo "127.0.0.1 host.docker.internal" >> /etc/hosts'
@@ -136,11 +141,11 @@ Use this to create new currencies.
 ### [Debtors agent's fake email server](http://localhost:8026/)
 
 You will need this in order to read the email messages which the
-*debtors agent* sends to you during user registration and login.
+*debtors agent* sends to you, during user registration and login.
 
 ### [Creditors agent's "My Wallet" webapp](https://localhost:44301/creditors-webapp/)
 
-Use this to hold already created currencies, trade them, and make
+Use this to obtain already created currencies, trade them, and make
 payments with them. By default, the creditors agent is configured to
 run [automated currency exchange
 sessions](/2024/07/04/automated-currency-exchanges/) every 10 minutes.
@@ -149,7 +154,7 @@ This should be convenient for testing.
 ### [Creditors agent's fake email server](http://localhost:8025/)
 
 You will need this in order to read the email messages which the
-*creditors agent* sends to you during user registration and login.
+*creditors agent* sends to you, during user registration and login.
 
 ## Conclusion
 
