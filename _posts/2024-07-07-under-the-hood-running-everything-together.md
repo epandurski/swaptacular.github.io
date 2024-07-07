@@ -5,7 +5,6 @@ description: >
   Explains how to run a full set of Swaptacular network nodes.
 author: Evgeni Pandurski
 tags: [under-the-hood]
-published: false
 ---
 
 In [the previous post](/2023/10/27/under-the-hood-payment-requests/)
