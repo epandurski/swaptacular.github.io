@@ -139,6 +139,10 @@ links:
 
 Use this to create new currencies.
 
+**Note:** You will have to coerce your browser to trust of the
+[self-signed
+certificate](https://en.wikipedia.org/wiki/Self-signed_certificate).
+
 ### [Debtors agent's fake email server](http://localhost:8026/)
 
 You will need this in order to read the email messages which the
