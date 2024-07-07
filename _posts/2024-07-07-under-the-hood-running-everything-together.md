@@ -139,7 +139,7 @@ links:
 
 Use this to create new currencies.
 
-**Note:** You will have to coerce your browser to trust of the
+**Note:** You will have to coerce your browser to trust the
 [self-signed
 certificate](https://en.wikipedia.org/wiki/Self-signed_certificate).
 
