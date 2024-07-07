@@ -27,10 +27,11 @@ Mac (currently we have only x86-64 images). However, the instructions
 given bellow are for Linux, because I use Linux, and this is the most
 popular platform for deployment of servers.
 
-You need to install two things on your machine:
+You need to install three things on your machine:
 
 1. [Docker Engine](https://docs.docker.com/engine/)
 2. [Docker Compose](https://docs.docker.com/compose/)
+3. [Git](https://git-scm.com/)
 
 It should be relatively easy to find detailed instructions on how to
 install those for most operating systems.
@@ -43,9 +44,8 @@ We want to run 3 different Swaptacular nodes simultaneously:
 2. a *creditors agent* node,
 3. a *debtors agent* node.
 
-The source code for each one of these nodes resides in a separate
-[Git](https://git-scm.com/) repository. You need to clone each of
-those 3 repositories separately:
+The source code for each one of these nodes resides in a separate Git
+repository. You need to clone each of those 3 repositories separately:
 
 {% highlight shell_session %}
 $ git clone https://github.com/swaptacular/swpt_accounts.git
@@ -125,7 +125,7 @@ line:
 
 > 127.0.0.1 host.docker.internal
 
-to the hosts file on your machine. On Linux, you can do this by
+to the *hosts file* on your machine. On Linux, you can do this by
 executing the following command:
 
 {% highlight shell_session %}
