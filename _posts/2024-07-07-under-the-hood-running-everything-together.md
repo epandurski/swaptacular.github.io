@@ -132,7 +132,8 @@ executing the following command:
 $ sudo sh -c 'echo "127.0.0.1 host.docker.internal" >> /etc/hosts'
 {% endhighlight %}
 
-After you have done this, you can use the following links:
+After you have successfully done this, you can use the following
+links:
 
 ### [Debtors agent's "My Currency" webapp](https://host.docker.internal:44302/debtors-webapp/)
 
