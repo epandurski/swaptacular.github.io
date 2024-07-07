@@ -103,7 +103,8 @@ Building debtors-server
 In each of those 3 terminals, a new docker image will be built from
 source, and then a bunch of docker containers will be started, running
 the image, along with a bunch of other docker images, downloaded from
-Internet.
+Internet. The newly created `.env` files contain basic configuration
+settings.
 
 **Note:** You can press `Ctrl-C` in the terminal, to stop all running
 containers.
