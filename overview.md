@@ -125,12 +125,6 @@ and
 [here](https://github.com/swaptacular/swpt_debtors/blob/master/docker-compose-all.yml).
 
 
-## Remaining work
-
-- [ ] Establish a registry for accounting authorities and well-known
-      currencies.
-
-
 <div>
   <h2>Want to know more?</h2>
   <ul class="related-posts">
