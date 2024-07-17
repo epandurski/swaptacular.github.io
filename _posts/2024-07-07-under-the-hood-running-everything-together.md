@@ -22,9 +22,9 @@ of some readers.
 Because all of the services that we will run here are packaged as
 [docker images](https://www.geeksforgeeks.org/what-is-docker-images/),
 chances are that you will be able to run them on Linux, Windows, or
-Mac (currently we have only x86-64 images). However, the instructions
-given bellow are for Linux, because I use Linux, and this is the most
-popular platform for deployment of servers.
+Mac (currently we have x86-64 and ARM64 images). However, the
+instructions given bellow are for Linux, because I use Linux, and this
+is the most popular platform for deployment of servers.
 
 You need to install three things on your machine:
 
