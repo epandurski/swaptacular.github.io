@@ -412,11 +412,13 @@ client has no other option but to wait for the transfer to be finalized
 ## Conclusion
 
 In this post I explained the most important high-level concepts in the
-[Payments Web API Specification](/public/docs/swpt_creditors/redoc.html).
-You can use the convenient [Swagger
-UI](https://demo.swaptacular.org/creditors-swagger-ui/) (client_id:
-`swagger-ui`, client_secret: `swagger-ui`) to browse the documentation, to
-and experiment with the API.
+[Payments Web API
+Specification](/public/docs/swpt_creditors/redoc.html). You can use
+the convenient [Swagger
+UI](https://euroscrip.net/creditors-swagger-ui/) (client_id:
+`bc10fa52-cbd0-4b54-8540-dae814b66d02`, client_secret:
+`.Bc7LsBhDccTbyU_ocbSo5T-Dp`) to browse the documentation, to and
+experiment with the API.
 
 In further posts, I will talk about Swaptacular's "digital coins" and
 payment requests.

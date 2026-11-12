@@ -34,8 +34,8 @@ feed:
 version: 2.1.0
 
 app_demo:
-  debtors_webapp: https://demo.swaptacular.org/debtors-webapp
-  creditors_webapp: https://demo.swaptacular.org/creditors-webapp
+  debtors_webapp: https://webapp.da0.swaptacular.org/en/
+  creditors_webapp: https://webapp.euroscrip.net/en/
   map_url: https://www.google.com/maps/d/viewer?mid=1kxVdxDvNABXMt9JSb92k_v0dpp9nf4c&usp=sharing
 
 mailing_list:

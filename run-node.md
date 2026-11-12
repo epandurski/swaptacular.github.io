@@ -93,10 +93,10 @@ authority nodes.
   </thead>
   <tbody>
     <tr>
-      <td><a href="/public/infobundles/example.zip">Example node</a></td>
+      <td><a href="/public/infobundles/aa_swaptacular_org.zip">aa.swaptacular.org</a></td>
       <td><code>10000000</code></td>
       <td>2026-04-12</td>
-      <td>out of service</td>
+      <td>operational</td>
     </tr>
   </tbody>
 </table>
