@@ -102,9 +102,9 @@ All the above implementations try to:
 
 - [x] Implement a user friendly UI for currency issuing.
 - [x] Implement a user friendly UI for making and receiving payments.
-- [ ] Define and implement a standard serialization for the messaging
+- [x] Define and implement a standard serialization for the messaging
   protocol.
-- [ ] Allow creditors/debtors agents to easily connect to multiple
+- [x] Allow creditors/debtors agents to easily connect to multiple
   accounting authorities, using user friendly UI and/or configuration
   files.
-- [ ] Implement circular currency exchanges.
+- [x] Implement circular currency exchanges.
