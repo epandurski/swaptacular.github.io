@@ -86,6 +86,15 @@ your local trading community, opportunities for exchange naturally
 emerge — and are handled automatically by the system.
 
 
+## A real-world example: Sgovor
+
+[Sgovor](https://sgovor.com/) is a Bulgarian initiative using
+Swaptacular to connect businesses and customers through digital
+vouchers. Businesses can issue their own vouchers, while customers
+can hold, spend, and exchange them using the Swaptacular apps.
+The website and instructions are in Bulgarian.
+
+
 <div class="lead message">
   👉 See the <a href="/faq/">Frequently Asked Questions</a>.
 </div>
