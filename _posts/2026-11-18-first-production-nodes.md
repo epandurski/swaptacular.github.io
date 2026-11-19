@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The First Production Nodes Are Online!
+title: The First Production Nodes are Online!
 description: >
   Announces that the first production Swaptacular nodes have joined
   the network.
